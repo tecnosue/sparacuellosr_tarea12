@@ -4,20 +4,25 @@
 
     <xsl:template match="/ies">
         <html>
-           
-            <table border="1">
+            <h1>
+                <xsl:value-of select="@nombre"/>  
+            </h1>
+            <p>Página web: <a href="{@web}">
+                <xsl:value-of select="@web"/>
+            </a></p>
+            <ul>
                 <xsl:apply-templates select="ciclos/ciclo"/>
-            </table>
-           
+            </ul>
         </html>
     </xsl:template>
 
+
     <xsl:template match="ciclo">
-        <tr>
-            <td>
-                <xsl:value-of select="nombre"/>
-            </td>
-        </tr>
+       
+     
+        <li><xsl:value-of select="nombre"/></li>
+   
+           
     </xsl:template>
 
 </xsl:stylesheet>
