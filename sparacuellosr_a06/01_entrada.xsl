@@ -12,7 +12,7 @@
                 <title>Tabla de artistas</title>
             </head>
             <body>
-                <table border="1">
+                <table>
                     <tr>
                         <th>Código</th>
                         <th>Nombre</th>
