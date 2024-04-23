@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="UTF-8"?>
+    <fo:root xmlns:fo="http://www.w3.org/1999/XSL/Format"><fo:layout-master-set><fo:simple-page-master master-name="simple" page-height="29.7cm" page-width="21cm" margin-top="1cm" margin-bottom="2cm" margin-left="2.5cm" margin-right="2.5cm"><fo:region-body margin-top="3cm"/><fo:region-before extent="3cm"/><fo:region-after extent="1.5cm"/></fo:simple-page-master></fo:layout-master-set><fo:page-sequence master-reference="simple"><fo:flow flow-name="xsl-region-body"><fo:block overflow="scroll" font-size="22pt" font-family="sans-serif" line-height="24pt" space-after.optimum="15pt" text-align="center" padding-top="3pt">Tarea: Introducción a XPath</fo:block><fo:list-block provisional-distance-between-starts="1cm" start-indent="0cm" space-before="6pt" space-after="6pt"><fo:list-item><fo:list-item-label end-indent="label-end()"><fo:block text-align="left">• </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()"><fo:block text-align="left">
+    Módulo profesional: Lenguajes de Marcas y Sistemas de Gestión de Información
+  </fo:block></fo:list-item-body></fo:list-item><fo:list-item><fo:list-item-label end-indent="label-end()"><fo:block text-align="left">• </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()"><fo:block text-align="left">Ciclo formativo: Desarrollo de Aplicaciones Web</fo:block></fo:list-item-body></fo:list-item><fo:list-item><fo:list-item-label end-indent="label-end()"><fo:block text-align="left">• </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()"><fo:block text-align="left">Autor: Susana Paracuellos Ralfas</fo:block></fo:list-item-body></fo:list-item><fo:list-item><fo:list-item-label end-indent="label-end()"><fo:block text-align="left">• </fo:block></fo:list-item-label><fo:list-item-body start-indent="body-start()"><fo:block text-align="left">Fecha: 23/03/2024</fo:block></fo:list-item-body></fo:list-item></fo:list-block><fo:block overflow="scroll" font-size="16pt" font-family="sans-serif" line-height="24pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Actividad 1</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">
+  Dado el siguiente documento XML, escriba las expresiones XPath que devuelvan
+  la respuesta deseada.
+</fo:block>
+  <fo:block font-family="'Courier New', monospace" font-size="10pt" color="#000000" background-color="#f0f0f0" line-height="14pt" space-after="10pt" space-before="10pt" text-align="left" padding="4pt" border="solid 1px #888888" wrap-option="wrap" white-space-collapse="false" white-space-treatment="preserve" linefeed-treatment="preserve">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;ies&gt;
+  &lt;nombre&gt;Campus Digital&lt;/nombre&gt;
+  &lt;web&gt;https://campusdigitalfp.com/&lt;/web&gt;
+  &lt;ciclos&gt;
+    &lt;ciclo id="ASIR"&gt;
+      &lt;nombre&gt;Administración de Sistemas Informáticos en Red&lt;/nombre&gt;
+      &lt;grado&gt;Superior&lt;/grado&gt;
+      &lt;decretoTitulo año="2009" /&gt;
+    &lt;/ciclo&gt;
+    &lt;ciclo id="DAM"&gt;
+      &lt;nombre&gt;Desarrollo de Aplicaciones Multiplataforma&lt;/nombre&gt;
+      &lt;grado&gt;Superior&lt;/grado&gt;
+      &lt;decretoTitulo año="2010" /&gt;
+    &lt;/ciclo&gt;
+    &lt;ciclo id="SMR"&gt;
+      &lt;nombre&gt;Sistemas Microinformáticos y Redes&lt;/nombre&gt;
+      &lt;grado&gt;Medio&lt;/grado&gt;
+      &lt;decretoTitulo año="2008" /&gt;
+    &lt;/ciclo&gt;
+  &lt;/ciclos&gt;
+&lt;/ies&gt;</fo:block>
+<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 1.1</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Nombre del instituto</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida esperada:</fo:block>
+  <fo:block font-family="'Courier New', monospace" font-size="10pt" color="#000000" background-color="#f0f0f0" line-height="14pt" space-after="10pt" space-before="10pt" text-align="left" padding="4pt" border="solid 1px #888888" wrap-option="wrap" white-space-collapse="false" white-space-treatment="preserve" linefeed-treatment="preserve">&lt;nombre&gt;Campus Digital&lt;/nombre&gt;</fo:block>
+<fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/ies/nombre</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>
+  <fo:block font-family="'Courier New', monospace" font-size="10pt" color="#000000" background-color="#f0f0f0" line-height="14pt" space-after="10pt" space-before="10pt" text-align="left" padding="4pt" border="solid 1px #888888" wrap-option="wrap" white-space-collapse="false" white-space-treatment="preserve" linefeed-treatment="preserve">&lt;nombre&gt;Campus Digital&lt;/nombre&gt;</fo:block>
+<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 1.2</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Página web del Instituto.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/ies/web/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>https://campusdigitalfp.com/<fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida esperada:</fo:block>https://campusdigitalfp.com/<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 1.3</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Nombre de los Ciclos Formativos.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/ies/ciclos/ciclo/nombre/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Administración de Sistemas Informáticos en Red
+Desarrollo de Aplicaciones Multiplataforma
+Sistemas Microinformáticos y Redes<fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida esperada:</fo:block>Administración de Sistemas Informáticos en Red
+Desarrollo de Aplicaciones Multiplataforma
+Sistemas Microinformáticos y Redes<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 1.4</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Siglas por las que se conocen los Ciclos Formativos.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/ies/ciclos/ciclo/@id</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>id=ASIR
+id=DAM
+id=SMR<fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida esperada:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">id="ASIR"
+id="DAM"
+id="SMR"</fo:block><fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 1.5</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">
+  Años en los que se publicaron los decretos de título de los Ciclos Formativos.
+</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida esperada:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">año="2009"
+año="2010"
+año="2008"</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/ies/ciclos/ciclo/decretoTitulo/@año</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>año=2009
+año=2010
+año=2008<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 1.6</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">
+  Ciclos Formativos de Grado Medio (se trata de obtener el elemento
+  &lt;ciclo&gt; completo).
+</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida esperada:</fo:block>
+  <fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">
+    Resuelva este ejercicio de dos formas distintas, en un único paso de
+    búsqueda y en dos pasos de búsqueda.
+  </fo:block>
+
+  <fo:block font-family="'Courier New', monospace" font-size="10pt" color="#000000" background-color="#f0f0f0" line-height="14pt" space-after="10pt" space-before="10pt" text-align="left" padding="4pt" border="solid 1px #888888" wrap-option="wrap" white-space-collapse="false" white-space-treatment="preserve" linefeed-treatment="preserve">&lt;ciclo id="SMR"&gt;
+  &lt;nombre&gt;Sistemas Microinformáticos y Redes&lt;/nombre&gt;
+  &lt;grado&gt;Medio&lt;/grado&gt;
+  &lt;decretoTitulo año="2008"/&gt;
+&lt;/ciclo&gt;</fo:block>
+<fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">En un único paso de búsqueda:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/ies/ciclos/ciclo[grado='Medio']</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">En dos pasos de búsqueda:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/ies/ciclos/ciclo[grado='Medio']/grado/..</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>
+  <fo:block font-family="'Courier New', monospace" font-size="10pt" color="#000000" background-color="#f0f0f0" line-height="14pt" space-after="10pt" space-before="10pt" text-align="left" padding="4pt" border="solid 1px #888888" wrap-option="wrap" white-space-collapse="false" white-space-treatment="preserve" linefeed-treatment="preserve">&lt;ciclo id="SMR"&gt;
+    &lt;nombre&gt;Sistemas Microinformáticos y Redes&lt;/nombre&gt;
+    &lt;grado&gt;Medio&lt;/grado&gt;
+    &lt;decretoTitulo año="2008"/&gt;
+&lt;/ciclo&gt;</fo:block>
+<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 1.7</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Nombre de los Ciclos Formativos de Grado Superior.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida esperada:</fo:block>
+  <fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">
+    Resuelva este ejercicio de dos formas distintas, en un único paso de
+    búsqueda y en dos pasos de búsqueda.
+  </fo:block>
+
+  <fo:block font-family="'Courier New', monospace" font-size="10pt" color="#000000" background-color="#f0f0f0" line-height="14pt" space-after="10pt" space-before="10pt" text-align="left" padding="4pt" border="solid 1px #888888" wrap-option="wrap" white-space-collapse="false" white-space-treatment="preserve" linefeed-treatment="preserve">&lt;nombre&gt;Desarrollo de Aplicaciones Multiplataforma&lt;/nombre&gt;
+&lt;nombre&gt;Administración de Sistemas Informáticos en Red&lt;/nombre&gt;</fo:block>
+<fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/ies/ciclos/ciclo[grado='Superior']/nombre</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>
+  <fo:block font-family="'Courier New', monospace" font-size="10pt" color="#000000" background-color="#f0f0f0" line-height="14pt" space-after="10pt" space-before="10pt" text-align="left" padding="4pt" border="solid 1px #888888" wrap-option="wrap" white-space-collapse="false" white-space-treatment="preserve" linefeed-treatment="preserve">&lt;nombre&gt;Administración de Sistemas Informáticos en Red&lt;/nombre&gt;
+&lt;nombre&gt;Desarrollo de Aplicaciones Multiplataforma&lt;/nombre&gt;</fo:block>
+<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 1.8</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Nombre de los Ciclos Formativos anteriores a 2010.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida esperada:</fo:block>
+  <fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">
+    Resuelva este ejercicio de dos formas distintas, en un único paso de
+    búsqueda y en dos pasos de búsqueda.
+  </fo:block>
+Administración de Sistemas Informáticos en Red
+Sistemas Microinformáticos y Redes<fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/ies/ciclos/ciclo[decretoTitulo/@año &lt; '2010']/nombre/text()
+</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Administración de Sistemas Informáticos en Red
+Sistemas Microinformáticos y Redes<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 1.9</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Nombre de los Ciclos Formativos de 2008 o 2010.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida esperada:</fo:block>
+  <fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">
+    Resuelva este ejercicio de dos formas distintas, en un único paso de
+    búsqueda y en dos pasos de búsqueda.
+  </fo:block>
+Desarrollo de Aplicaciones Multiplataforma
+Sistemas Microinformáticos y Redes<fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/ies/ciclos/ciclo[decretoTitulo/@año='2008' or decretoTitulo/@año='2010']/nombre/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Desarrollo de Aplicaciones Multiplataforma
+Sistemas Microinformáticos y Redes<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 1.9</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Invéntate tu propia consulta.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Nombre del ciclo con la menor antigüedad (año del decreto más reciente).</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/ies/ciclos/ciclo[decretoTitulo/@año = max(/ies/ciclos/ciclo/decretoTitulo/@año)]/nombre</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>
+  <fo:block font-family="'Courier New', monospace" font-size="10pt" color="#000000" background-color="#f0f0f0" line-height="14pt" space-after="10pt" space-before="10pt" text-align="left" padding="4pt" border="solid 1px #888888" wrap-option="wrap" white-space-collapse="false" white-space-treatment="preserve" linefeed-treatment="preserve">&lt;nombre&gt;Desarrollo de Aplicaciones Multiplataforma&lt;/nombre&gt;</fo:block>
+<fo:block overflow="scroll" font-size="16pt" font-family="sans-serif" line-height="24pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Actividad 2</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">
+  Dado el siguiente documento XML, escriba las expresiones XPath que devuelvan
+  la respuesta deseada.
+</fo:block>
+  <fo:block font-family="'Courier New', monospace" font-size="10pt" color="#000000" background-color="#f0f0f0" line-height="14pt" space-after="10pt" space-before="10pt" text-align="left" padding="4pt" border="solid 1px #888888" wrap-option="wrap" white-space-collapse="false" white-space-treatment="preserve" linefeed-treatment="preserve">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;ies&gt;
+  &lt;modulos&gt;
+    &lt;modulo id="0228"&gt;
+      &lt;nombre&gt;Aplicaciones web&lt;/nombre&gt;
+      &lt;curso&gt;2&lt;/curso&gt;
+      &lt;horasSemanales&gt;4&lt;/horasSemanales&gt;
+      &lt;ciclo&gt;SMR&lt;/ciclo&gt;
+    &lt;/modulo&gt;
+    &lt;modulo id="0372"&gt;
+      &lt;nombre&gt;Gestión de bases de datos&lt;/nombre&gt;
+      &lt;curso&gt;1&lt;/curso&gt;
+      &lt;horasSemanales&gt;5&lt;/horasSemanales&gt;
+      &lt;ciclo&gt;ASIR&lt;/ciclo&gt;
+    &lt;/modulo&gt;
+    &lt;modulo id="0373"&gt;
+      &lt;nombre&gt;Lenguajes de marcas y sistemas de gestión de información&lt;/nombre&gt;
+      &lt;curso&gt;1&lt;/curso&gt;
+      &lt;horasSemanales&gt;3&lt;/horasSemanales&gt;
+      &lt;ciclo&gt;ASIR&lt;/ciclo&gt;
+      &lt;ciclo&gt;DAW&lt;/ciclo&gt;
+    &lt;/modulo&gt;
+    &lt;modulo id="0378"&gt;
+      &lt;nombre&gt;Seguridad y Alta Disponibilidad&lt;/nombre&gt;
+      &lt;curso&gt;2&lt;/curso&gt;
+      &lt;horasSemanales&gt;2&lt;/horasSemanales&gt;
+      &lt;ciclo&gt;ASIR&lt;/ciclo&gt;
+    &lt;/modulo&gt;
+  &lt;/modulos&gt;
+&lt;/ies&gt;</fo:block>
+<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 2.1</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Nombre de los módulos que se imparten en el Instituto.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida esperada:</fo:block>Aplicaciones web
+Gestión de bases de datos
+Lenguajes de marcas y sistemas de gestión de información
+Seguridad y Alta Disponibilidad<fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/ies/modulos//nombre/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Aplicaciones web
+Gestión de bases de datos
+Lenguajes de marcas y sistemas de gestión de información
+Seguridad y Alta Disponibilidad<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 2.2</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Nombre de los módulos del ciclo ASIR.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida esperada:</fo:block>Gestión de bases de datos
+Lenguajes de marcas y sistemas de gestión de información
+Seguridad y Alta Disponibilidad<fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/ies/modulos/modulo[ciclo='ASIR']/nombre/text()
+</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Gestión de bases de datos
+Lenguajes de marcas y sistemas de gestión de información
+Seguridad y Alta Disponibilidad<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 2.3</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">
+  Nombre de los módulos que se imparten en el segundo curso de cualquier ciclo.
+</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida esperada:</fo:block>Aplicaciones web
+Seguridad y Alta Disponibilidad<fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/ies/modulos/modulo[curso='2']/nombre/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Aplicaciones web
+Seguridad y Alta Disponibilidad<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 2.4</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Nombre de los módulos de menos de 5 horas semanales.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida esperada:</fo:block>Aplicaciones web
+Lenguajes de marcas y sistemas de gestión de información
+Seguridad y Alta Disponibilidad<fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/ies/modulos/modulo[horasSemanales&lt;5]/nombre/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>
+  <fo:block font-family="'Courier New', monospace" font-size="10pt" color="#000000" background-color="#f0f0f0" line-height="14pt" space-after="10pt" space-before="10pt" text-align="left" padding="4pt" border="solid 1px #888888" wrap-option="wrap" white-space-collapse="false" white-space-treatment="preserve" linefeed-treatment="preserve">Aplicaciones web
+Lenguajes de marcas y sistemas de gestión de información
+Seguridad y Alta Disponibilidad</fo:block>
+<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 2.5</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Nombre de los módulos que se imparten en el primer curso de ASIR.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida esperada:</fo:block>Gestión de bases de datos
+Lenguajes de marcas y sistemas de gestión de información<fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/ies/modulos/modulo[curso='1' and ciclo='ASIR']/nombre/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Gestión de bases de datos
+Lenguajes de marcas y sistemas de gestión de información<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 2.6</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Horas semanales de los módulos de más de 3 horas semanales.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida esperada:</fo:block>4
+5<fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/ies/modulos/modulo[horasSemanales&gt;3]/horasSemanales/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>4
+5<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 2.7</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Invéntate tu propia consulta.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Nombre del módulo que se imparte en más de un ciclo. Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/ies/modulos/modulo[count(ciclo)&gt;1]/nombre/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Lenguajes de marcas y sistemas de gestión de información<fo:block overflow="scroll" font-size="16pt" font-family="sans-serif" line-height="24pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Actividad 3</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">
+  Dado el siguiente documento XML, escriba las expresiones XPath que devuelvan
+  la respuesta deseada.
+</fo:block>
+  <fo:block font-family="'Courier New', monospace" font-size="10pt" color="#000000" background-color="#f0f0f0" line-height="14pt" space-after="10pt" space-before="10pt" text-align="left" padding="4pt" border="solid 1px #888888" wrap-option="wrap" white-space-collapse="false" white-space-treatment="preserve" linefeed-treatment="preserve">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;ies&gt;
+  &lt;nombre&gt;Campus Digital&lt;/nombre&gt;
+  &lt;web&gt;https://campusdigitalfp.com/&lt;/web&gt;
+  &lt;ciclos&gt;
+    &lt;ciclo id="ASIR"&gt;
+      &lt;nombre&gt;Administración de Sistemas Informáticos en Red&lt;/nombre&gt;
+      &lt;grado&gt;Superior&lt;/grado&gt;
+      &lt;decretoTitulo año="2009" /&gt;
+    &lt;/ciclo&gt;
+    &lt;ciclo id="DAW"&gt;
+      &lt;nombre&gt;Desarrollo de Aplicaciones Web&lt;/nombre&gt;
+      &lt;grado&gt;Superior&lt;/grado&gt;
+      &lt;decretoTitulo año="2010" /&gt;
+    &lt;/ciclo&gt;
+    &lt;ciclo id="SMR"&gt;
+      &lt;nombre&gt;Sistemas Microinformáticos y Redes&lt;/nombre&gt;
+      &lt;grado&gt;Medio&lt;/grado&gt;
+      &lt;decretoTitulo año="2008" /&gt;
+    &lt;/ciclo&gt;
+  &lt;/ciclos&gt;
+  &lt;modulos&gt;
+    &lt;modulo id="0228"&gt;
+      &lt;nombre&gt;Aplicaciones web&lt;/nombre&gt;
+      &lt;curso&gt;2&lt;/curso&gt;
+      &lt;horasSemanales&gt;4&lt;/horasSemanales&gt;
+      &lt;ciclo&gt;SMR&lt;/ciclo&gt;
+    &lt;/modulo&gt;
+    &lt;modulo id="0372"&gt;
+      &lt;nombre&gt;Gestión de bases de datos&lt;/nombre&gt;
+      &lt;curso&gt;1&lt;/curso&gt;
+      &lt;horasSemanales&gt;5&lt;/horasSemanales&gt;
+      &lt;ciclo&gt;ASIR&lt;/ciclo&gt;
+    &lt;/modulo&gt;
+    &lt;modulo id="0373"&gt;
+      &lt;nombre&gt;Lenguajes de marcas y sistemas de gestión de información&lt;/nombre&gt;
+      &lt;curso&gt;1&lt;/curso&gt;
+      &lt;horasSemanales&gt;3&lt;/horasSemanales&gt;
+      &lt;ciclo&gt;ASIR&lt;/ciclo&gt;
+      &lt;ciclo&gt;DAW&lt;/ciclo&gt;
+    &lt;/modulo&gt;
+    &lt;modulo id="0378"&gt;
+      &lt;nombre&gt;Seguridad y Alta Disponibilidad&lt;/nombre&gt;
+      &lt;curso&gt;2&lt;/curso&gt;
+      &lt;horasSemanales&gt;2&lt;/horasSemanales&gt;
+      &lt;ciclo&gt;ASIR&lt;/ciclo&gt;
+    &lt;/modulo&gt;
+  &lt;/modulos&gt;
+&lt;/ies&gt;</fo:block>
+<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 3.1</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">
+  Nombre de los módulos del ciclo “Sistemas Microinformáticos y Redes” (en la
+  expresión final no deben aparecer las siglas SMR).
+</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida esperada:</fo:block>Aplicaciones web<fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/ies/modulos/modulo[ciclo='SMR']/nombre/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Aplicaciones web<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 3.2</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">
+  Nombre de los ciclos que incluyen el módulo “Lenguajes de marcas y sistemas de
+  gestión de información”.
+</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida esperada:</fo:block>Administración de Sistemas Informáticos en Red
+Desarrollo de Aplicaciones Web<fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">//ciclos/ciclo[@id=/ies/modulos/modulo[nombre='Lenguajes de marcas y sistemas de gestión de información']/ciclo]/nombre/node()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Administración de Sistemas Informáticos en Red
+Desarrollo de Aplicaciones Web<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 3.3</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Nombre de los módulos de ciclos de Grado Superior.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida esperada:</fo:block>Gestión de bases de datos
+Lenguajes de marcas y sistemas de gestión de información
+Seguridad y Alta Disponibilidad<fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/ies/modulos/modulo[ciclo = /ies/ciclos/ciclo[grado='Superior']/@id]/nombre/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Gestión de bases de datos
+Lenguajes de marcas y sistemas de gestión de información
+Seguridad y Alta Disponibilidad<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 3.4</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Nombre de los módulos de ciclos cuyo título se aprobó en 2008.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida esperada:</fo:block>Aplicaciones web<fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">//modulo[ciclo=/ies/ciclos/ciclo[decretoTitulo/@año='2008']/@id]/nombre/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Aplicaciones web<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 3.5</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Grado de los ciclos con módulos de primer curso.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida esperada:</fo:block>Superior
+Superior<fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">//ciclos/ciclo[@id=/ies/modulos/modulo[curso='1']/ciclo]/grado/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Superior
+Superior<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 3.6</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Invéntate tu propia consulta.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Nombre de los módulos que son impartidos en más de un ciclo</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">//modulo[count(ciclo) &gt; 1]/nombre/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Lenguajes de marcas y sistemas de gestión de información<fo:block overflow="scroll" font-size="16pt" font-family="sans-serif" line-height="24pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">(Voluntaria) Actividad 4</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Dado el siguiente fichero XML:</fo:block>
+  <fo:block font-family="'Courier New', monospace" font-size="10pt" color="#000000" background-color="#f0f0f0" line-height="14pt" space-after="10pt" space-before="10pt" text-align="left" padding="4pt" border="solid 1px #888888" wrap-option="wrap" white-space-collapse="false" white-space-treatment="preserve" linefeed-treatment="preserve">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
+&lt;universidad&gt;
+
+    &lt;nombre&gt;Universidad de Zaragoza&lt;/nombre&gt;
+    &lt;pais&gt;España&lt;/pais&gt;
+
+    &lt;!-- GRADOS --&gt;
+
+    &lt;grados&gt;
+
+        &lt;grado id="g01"&gt;
+            &lt;nombre&gt;Grado en Ingeniería Informática&lt;/nombre&gt;
+            &lt;plan&gt;2003&lt;/plan&gt;
+            &lt;creditos&gt;250&lt;/creditos&gt;
+            &lt;centro&gt;Escuela de Informática&lt;/centro&gt;
+        &lt;/grado&gt;
+
+        &lt;grado id="g02"&gt;
+            &lt;nombre&gt;Grado en Administración y Dirección de Empresas&lt;/nombre&gt;
+            &lt;plan&gt;2000&lt;/plan&gt;
+            &lt;creditos&gt;275&lt;/creditos&gt;
+            &lt;centro&gt;Facultad de Ciencias Sociales&lt;/centro&gt;
+        &lt;/grado&gt;
+
+        &lt;grado id="g03"&gt;
+            &lt;nombre&gt;Grado en Relaciones Laborales&lt;/nombre&gt;
+            &lt;plan&gt;2000&lt;/plan&gt;
+            &lt;creditos&gt;280&lt;/creditos&gt;
+            &lt;centro&gt;Facultad de Ciencias Sociales&lt;/centro&gt;
+            &lt;subdirector&gt;Alfonso Martín Luque&lt;/subdirector&gt;
+        &lt;/grado&gt;
+
+        &lt;grado id="g04"&gt;
+            &lt;nombre&gt;Grado en Quimica&lt;/nombre&gt;
+            &lt;plan&gt;2003&lt;/plan&gt;
+            &lt;creditos&gt;175&lt;/creditos&gt;
+            &lt;centro&gt;Facultad de Ciencias Experimentales&lt;/centro&gt;
+        &lt;/grado&gt;
+
+        &lt;grado id="g05"&gt;
+            &lt;nombre&gt;Grado en Biotecnología&lt;/nombre&gt;
+            &lt;plan&gt;2000&lt;/plan&gt;
+            &lt;creditos&gt;175&lt;/creditos&gt;
+            &lt;centro&gt;Facultad de Ciencias&lt;/centro&gt;
+        &lt;/grado&gt;
+
+        &lt;grado id="g06"&gt;
+            &lt;nombre&gt;Grado en Humanidades&lt;/nombre&gt;
+            &lt;plan&gt;1980&lt;/plan&gt;
+            &lt;creditos&gt;475&lt;/creditos&gt;
+            &lt;centro&gt;Facultad de Humanidades&lt;/centro&gt;
+        &lt;/grado&gt;
+
+    &lt;/grados&gt;
+
+    &lt;!-- ASIGNATURAS --&gt;
+
+    &lt;asignaturas&gt;
+
+        &lt;asignatura id="a01" titulacion="g01"&gt;
+            &lt;nombre&gt;Ofimática&lt;/nombre&gt;
+            &lt;creditosTeoricos&gt;3&lt;/creditosTeoricos&gt;
+            &lt;creditosPracticos&gt;1.5&lt;/creditosPracticos&gt;
+            &lt;trimestre&gt;1&lt;/trimestre&gt;
+        &lt;/asignatura&gt;
+
+        &lt;asignatura id="a02" titulacion="g01"&gt;
+            &lt;nombre&gt;Ingeniería del Software&lt;/nombre&gt;
+            &lt;creditosTeoricos&gt;6&lt;/creditosTeoricos&gt;
+            &lt;creditosPracticos&gt;1.5&lt;/creditosPracticos&gt;
+            &lt;trimestre&gt;2&lt;/trimestre&gt;
+        &lt;/asignatura&gt;
+
+        &lt;asignatura id="a03" titulacion="g02"&gt;
+            &lt;nombre&gt;Administración de Empresas&lt;/nombre&gt;
+            &lt;creditosTeoricos&gt;4&lt;/creditosTeoricos&gt;
+            &lt;creditosPracticos&gt;1.5&lt;/creditosPracticos&gt;
+            &lt;trimestre&gt;1&lt;/trimestre&gt;
+        &lt;/asignatura&gt;
+
+        &lt;asignatura id="a04" titulacion="g02"&gt;
+            &lt;nombre&gt;Derecho Internacional&lt;/nombre&gt;
+            &lt;creditosTeoricos&gt;4&lt;/creditosTeoricos&gt;
+            &lt;creditosPracticos&gt;5&lt;/creditosPracticos&gt;
+            &lt;trimestre&gt;1&lt;/trimestre&gt;
+        &lt;/asignatura&gt;
+
+        &lt;asignatura id="a05" titulacion="g04"&gt;
+            &lt;nombre&gt;Pedagogía&lt;/nombre&gt;
+            &lt;creditosTeoricos&gt;4&lt;/creditosTeoricos&gt;
+            &lt;creditosPracticos&gt;1.5&lt;/creditosPracticos&gt;
+            &lt;trimestre&gt;2&lt;/trimestre&gt;
+        &lt;/asignatura&gt;
+
+        &lt;asignatura id="a06" titulacion="g03"&gt;
+            &lt;nombre&gt;Didáctica&lt;/nombre&gt;
+            &lt;creditosTeoricos&gt;4&lt;/creditosTeoricos&gt;
+            &lt;creditosPracticos&gt;3&lt;/creditosPracticos&gt;
+            &lt;trimestre&gt;2&lt;/trimestre&gt;
+        &lt;/asignatura&gt;
+
+        &lt;asignatura id="a07" titulacion="g04"&gt;
+            &lt;nombre&gt;Tecnología de los Alimentos&lt;/nombre&gt;
+            &lt;creditosTeoricos&gt;1.5&lt;/creditosTeoricos&gt;
+            &lt;creditosPracticos&gt;7.5&lt;/creditosPracticos&gt;
+            &lt;trimestre&gt;2&lt;/trimestre&gt;
+        &lt;/asignatura&gt;
+
+        &lt;asignatura id="a08" titulacion="g01"&gt;
+            &lt;nombre&gt;Bases de Datos&lt;/nombre&gt;
+            &lt;creditosTeoricos&gt;4.5&lt;/creditosTeoricos&gt;
+            &lt;creditosPracticos&gt;5.5&lt;/creditosPracticos&gt;
+            &lt;trimestre&gt;1&lt;/trimestre&gt;
+        &lt;/asignatura&gt;
+
+        &lt;asignatura id="a09" titulacion="g06"&gt;
+            &lt;nombre&gt;Historia del Pensamiento&lt;/nombre&gt;
+            &lt;creditosTeoricos&gt;6&lt;/creditosTeoricos&gt;
+            &lt;creditosPracticos&gt;0&lt;/creditosPracticos&gt;
+            &lt;trimestre&gt;2&lt;/trimestre&gt;
+        &lt;/asignatura&gt;
+
+    &lt;/asignaturas&gt;
+
+    &lt;!-- ALUMNOS --&gt;
+
+    &lt;alumnos&gt;
+
+        &lt;alumno id="e01"&gt;
+            &lt;apellido1&gt;Rivas&lt;/apellido1&gt;
+            &lt;apellido2&gt;Santos&lt;/apellido2&gt;
+            &lt;nombre&gt;Víctor Manuel&lt;/nombre&gt;
+            &lt;sexo&gt;Hombre&lt;/sexo&gt;
+            &lt;estudios&gt;
+                &lt;grado codigo="g01" /&gt;
+                &lt;asignaturas&gt;
+                    &lt;asignatura codigo="a01" /&gt;
+                    &lt;asignatura codigo="a03" /&gt;
+                    &lt;asignatura codigo="a05" /&gt;
+                    &lt;asignatura codigo="a09" /&gt;
+                &lt;/asignaturas&gt;
+            &lt;/estudios&gt;
+        &lt;/alumno&gt;
+
+        &lt;alumno id="e02"&gt;
+            &lt;apellido1&gt;Pérez&lt;/apellido1&gt;
+            &lt;apellido2&gt;García&lt;/apellido2&gt;
+            &lt;nombre&gt;Luisa&lt;/nombre&gt;
+            &lt;sexo&gt;Mujer&lt;/sexo&gt;
+            &lt;estudios&gt;
+                &lt;grado codigo="g02" /&gt;
+                &lt;asignaturas&gt;
+                    &lt;asignatura codigo="a02" /&gt;
+                    &lt;asignatura codigo="a01" /&gt;
+                &lt;/asignaturas&gt;
+                &lt;proyecto&gt;Web de IBM.com&lt;/proyecto&gt;
+            &lt;/estudios&gt;
+
+        &lt;/alumno&gt;
+
+        &lt;alumno id="e03" beca="si"&gt;
+            &lt;apellido1&gt;Pérez&lt;/apellido1&gt;
+            &lt;apellido2&gt;Romero&lt;/apellido2&gt;
+            &lt;nombre&gt;Fernando&lt;/nombre&gt;
+            &lt;sexo&gt;Hombre&lt;/sexo&gt;
+            &lt;estudios&gt;
+                &lt;grado codigo="g02" /&gt;
+                &lt;asignaturas&gt;
+                    &lt;asignatura codigo="a02" /&gt;
+                    &lt;asignatura codigo="a01" /&gt;
+                    &lt;asignatura codigo="a04" /&gt;
+                    &lt;asignatura codigo="a09" /&gt;
+                &lt;/asignaturas&gt;
+            &lt;/estudios&gt;
+        &lt;/alumno&gt;
+
+        &lt;alumno id="e04"&gt;
+            &lt;apellido1&gt;Avalón&lt;/apellido1&gt;
+            &lt;apellido2&gt;Jiménez&lt;/apellido2&gt;
+            &lt;nombre&gt;María&lt;/nombre&gt;
+            &lt;sexo&gt;Mujer&lt;/sexo&gt;
+            &lt;estudios&gt;
+                &lt;grado codigo="g01" /&gt;
+                &lt;asignaturas&gt;
+                    &lt;asignatura codigo="a02" /&gt;
+                    &lt;asignatura codigo="a01" /&gt;
+                    &lt;asignatura codigo="a07" /&gt;
+                &lt;/asignaturas&gt;
+                &lt;proyecto&gt;Estudio de Salinidad del Pantano Iris&lt;/proyecto&gt;
+            &lt;/estudios&gt;
+        &lt;/alumno&gt;
+
+    &lt;/alumnos&gt;
+
+&lt;/universidad&gt;</fo:block>
+<fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Obtén la siguiente información.</fo:block><fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 4.01</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Nombre de la Universidad.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/universidad/nombre/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Universidad de Zaragoza<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 4.02</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">País de la Universidad.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/universidad/pais/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>España<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 4.03</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Nombres de las grados.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/universidad/grados/grado/nombre/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Grado en Ingeniería Informática
+Grado en Administración y Dirección de Empresas
+Grado en Relaciones Laborales
+Grado en Quimica
+Grado en Biotecnología
+Grado en Humanidades<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 4.04</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Años de plan de estudio de las grados.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/universidad/grados/grado/plan/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>2003
+2000
+2000
+2003
+2000
+1980<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 4.05</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Nombres de todos los alumnos.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/universidad/alumnos/alumno/nombre/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Víctor Manuel
+Luisa
+Fernando
+María<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 4.06</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Identificadores de todas las grados.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/universidad/grados/grado/@id</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>id=g01
+id=g02
+id=g03
+id=g04
+id=g05
+id=g06<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 4.07</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Datos de la grado cuyo id es g01.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/universidad/grados/grado[@id='g01']
+</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>
+  <fo:block font-family="'Courier New', monospace" font-size="10pt" color="#000000" background-color="#f0f0f0" line-height="14pt" space-after="10pt" space-before="10pt" text-align="left" padding="4pt" border="solid 1px #888888" wrap-option="wrap" white-space-collapse="false" white-space-treatment="preserve" linefeed-treatment="preserve">&lt;grado id="g01"&gt;
+    &lt;nombre&gt;Grado en Ingeniería Informática&lt;/nombre&gt;
+    &lt;plan&gt;2003&lt;/plan&gt;
+    &lt;creditos&gt;250&lt;/creditos&gt;
+    &lt;centro&gt;Escuela de Informática&lt;/centro&gt;
+&lt;/grado&gt;</fo:block>
+<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 4.08</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Centro en que se estudia de la grado cuyo id es g02.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/universidad/grados/grado[@id='g02']/centro/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Facultad de Ciencias Sociales<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 4.09</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Nombre de las grados que tengan subdirector.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/universidad/grados/grado[subdirector]/nombre/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Grado en Relaciones Laborales<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 4.10</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Nombre de los alumnos que estén haciendo proyecto.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/universidad/alumnos/alumno/estudios/proyecto/../../nombre/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Luisa
+María<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 4.11</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Códigos de las grados en las que hay algún alumno matriculado.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/universidad/alumnos/alumno/estudios/grado/@codigo</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>
+  <fo:block font-family="'Courier New', monospace" font-size="10pt" color="#000000" background-color="#f0f0f0" line-height="14pt" space-after="10pt" space-before="10pt" text-align="left" padding="4pt" border="solid 1px #888888" wrap-option="wrap" white-space-collapse="false" white-space-treatment="preserve" linefeed-treatment="preserve">codigo=g01
+codigo=g02
+codigo=g02
+codigo=g01</fo:block>
+<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 4.12</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Apellidos y Nombre de los alumnos con beca.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/universidad/alumnos/alumno[@beca='si']/nombre/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Fernando<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 4.13</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Nombre de las asignaturas del grado g04.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/universidad/asignaturas/asignatura[@titulacion='g04']/nombre/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Pedagogía
+Tecnología de los Alimentos<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 4.14</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Nombre de las asignaturas de segundo trimestre.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/universidad/asignaturas/asignatura[trimestre='2']/nombre/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Ingeniería del Software
+Pedagogía
+Didáctica
+Tecnología de los Alimentos
+Historia del Pensamiento<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 4.15</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Nombre de las asignaturas que no tienen 4 créditos teóricos.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/universidad/asignaturas/asignatura[creditosTeoricos!='4']/nombre/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Ofimática
+Ingeniería del Software
+Tecnología de los Alimentos
+Bases de Datos
+Historia del Pensamiento<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 4.16</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Código de la grado que estudia el último alumno.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/universidad/alumnos/alumno[last()]/estudios/grado/@codigo</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>
+  <fo:block font-family="'Courier New', monospace" font-size="10pt" color="#000000" background-color="#f0f0f0" line-height="14pt" space-after="10pt" space-before="10pt" text-align="left" padding="4pt" border="solid 1px #888888" wrap-option="wrap" white-space-collapse="false" white-space-treatment="preserve" linefeed-treatment="preserve">codigo=g01</fo:block>
+<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 4.17</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Código de las asignaturas que estudian mujeres.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/universidad/alumnos/alumno[sexo='Mujer']/estudios/asignaturas/asignatura/@codigo</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>
+  <fo:block font-family="'Courier New', monospace" font-size="10pt" color="#000000" background-color="#f0f0f0" line-height="14pt" space-after="10pt" space-before="10pt" text-align="left" padding="4pt" border="solid 1px #888888" wrap-option="wrap" white-space-collapse="false" white-space-treatment="preserve" linefeed-treatment="preserve">codigo=a02
+codigo=a01
+codigo=a02
+codigo=a01
+codigo=a07</fo:block>
+<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 4.18</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Nombre de los alumnos que matriculados en la asignatura a02.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/universidad/alumnos/alumno[estudios/asignaturas/asignatura[@codigo='a02']]/nombre/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Luisa
+Fernando
+María<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 4.19</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">
+  Códigos de las grados que estudian los alumnos matriculados en alguna
+  asignatura.
+</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/universidad/alumnos/alumno/estudios/grado/@codigo</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>
+  <fo:block font-family="'Courier New', monospace" font-size="10pt" color="#000000" background-color="#f0f0f0" line-height="14pt" space-after="10pt" space-before="10pt" text-align="left" padding="4pt" border="solid 1px #888888" wrap-option="wrap" white-space-collapse="false" white-space-treatment="preserve" linefeed-treatment="preserve">codigo=g01
+codigo=g02
+codigo=g02
+codigo=g01</fo:block>
+<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 4.20</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Apellidos de todos los hombres.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/universidad/alumnos/alumno[sexo='Hombre']/*[self::apellido1 or self::apellido2]/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Rivas
+Santos
+Pérez
+Romero<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 4.21</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Nombre de la grado que estudia Víctor Manuel.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/universidad/grados/grado[@id=/universidad/alumnos/alumno[nombre='Víctor Manuel']/estudios/grado/@codigo]/nombre/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Grado en Ingeniería Informática<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 4.22</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Nombre de las asignaturas que estudia Luisa.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/universidad/asignaturas/asignatura[@id=/universidad/alumnos/alumno[nombre='Luisa']/estudios/asignaturas/asignatura/@codigo]/nombre/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Ofimática
+Ingeniería del Software<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 4.23</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Primer apellido de los alumnos matriculados en Ingeniería del Software.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/universidad/alumnos/alumno[estudios/asignaturas/asignatura[@codigo=/universidad/asignaturas/asignatura[nombre='Ingeniería del Software']/@id]]/apellido1/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Pérez
+Pérez
+Avalón<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 4.24</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">
+  Nombre de las grados que estudian los alumnos matriculados en la asignatura
+  Tecnología de los Alimentos.
+</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/universidad/grados/grado[@id = /universidad/alumnos/alumno/estudios/asignaturas/asignatura[@codigo = 'a07']/../../grado/@codigo]/nombre/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Grado en Ingeniería Informática<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 4.25</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Nombre de los alumnos matriculados en grados que no tienen subdirector.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/universidad/alumnos/alumno[estudios/grado/@codigo = /universidad/grados/grado[not(subdirector)]/@id]/nombre/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Víctor Manuel
+Luisa
+Fernando
+María<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 4.26</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">
+  Nombre de las alumnos matriculados en asignaturas con 0 créditos prácticos y
+  que estudien la grado de I.T. Informática . Consulta XPath:
+</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/universidad/alumnos/alumno[estudios/asignaturas/asignatura/@codigo = /universidad/asignaturas/asignatura[creditosPracticos='0']/@id and estudios/grado/@codigo = //grado[nombre="Grado en Ingeniería Informática"]/@id]/nombre/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Víctor Manuel<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 4.27</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">
+  Nombre de los alumnos que estudian grados cuyos planes son anteriores a 2002.
+  Consulta XPath:
+</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/universidad/alumnos/alumno[estudios/grado/@codigo = /universidad/grados/grado[plan &lt; '2002']/@id]/nombre/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Luisa
+Fernando<fo:block font-size="14pt" font-weight="bold" space-after.optimum="12pt" text-align="left" padding-top="6pt">Actividad 4.28</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Invéntate tu propia consulta.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Nombre de las asignaturas que tienen más créditos prácticos que teóricos.</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Consulta XPath:</fo:block><fo:block overflow="scroll" font-family="monospace" white-space-collapse="false" wrap-option="wrap" border="solid 0.5px black" padding="2mm" background-color="#f0f0f0" linefeed-treatment="preserve" white-space-treatment="preserve">/universidad/asignaturas/asignatura[number(creditosPracticos) &gt; number(creditosTeoricos)]/nombre/text()</fo:block><fo:block overflow="scroll" font-size="10pt" font-family="sans-serif" line-height="18pt" space-after.optimum="15pt" text-align="left" padding-top="3pt">Salida real:</fo:block>Derecho Internacional
+Tecnología de los Alimentos
+Bases de Datos</fo:flow></fo:page-sequence></fo:root>

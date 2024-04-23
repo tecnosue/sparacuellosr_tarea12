@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html>
+    <body>
+<h1 id="tarea-introducción-a-xpath">Tarea: Introducción a XPath</h1>
+<ul>
+  <li>
+    Módulo profesional: Lenguajes de Marcas y Sistemas de Gestión de Información
+  </li>
+  <li>Ciclo formativo: Desarrollo de Aplicaciones Web</li>
+  <li>Autor: Susana Paracuellos Ralfas</li>
+  <li>Fecha: 23/03/2024</li>
+</ul>
+<h2 id="actividad-1">Actividad 1</h2>
+<p>
+  Dado el siguiente documento XML, escriba las expresiones XPath que devuelvan
+  la respuesta deseada.
+</p>
+<div class="sourceCode" id="cb1">
+  <pre
+    class="sourceCode xml"
+  ><code class="sourceCode xml"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;?xml</span><span class="ot"> version=</span><span class="st">&quot;1.0&quot;</span><span class="ot"> encoding=</span><span class="st">&quot;UTF-8&quot;</span><span class="fu">?&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">ies</span>&gt;</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">nombre</span>&gt;Campus Digital&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">web</span>&gt;https://campusdigitalfp.com/&lt;/<span class="kw">web</span>&gt;</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">ciclos</span>&gt;</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">ciclo</span><span class="ot"> id=</span><span class="st">&quot;ASIR&quot;</span>&gt;</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">nombre</span>&gt;Administración de Sistemas Informáticos en Red&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">grado</span>&gt;Superior&lt;/<span class="kw">grado</span>&gt;</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">decretoTitulo</span><span class="ot"> año=</span><span class="st">&quot;2009&quot;</span> /&gt;</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">ciclo</span>&gt;</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">ciclo</span><span class="ot"> id=</span><span class="st">&quot;DAM&quot;</span>&gt;</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">nombre</span>&gt;Desarrollo de Aplicaciones Multiplataforma&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">grado</span>&gt;Superior&lt;/<span class="kw">grado</span>&gt;</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">decretoTitulo</span><span class="ot"> año=</span><span class="st">&quot;2010&quot;</span> /&gt;</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">ciclo</span>&gt;</span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">ciclo</span><span class="ot"> id=</span><span class="st">&quot;SMR&quot;</span>&gt;</span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">nombre</span>&gt;Sistemas Microinformáticos y Redes&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">grado</span>&gt;Medio&lt;/<span class="kw">grado</span>&gt;</span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">decretoTitulo</span><span class="ot"> año=</span><span class="st">&quot;2008&quot;</span> /&gt;</span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">ciclo</span>&gt;</span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">ciclos</span>&gt;</span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ies</span>&gt;</span></code></pre>
+</div>
+<h3 id="actividad-1.1">Actividad 1.1</h3>
+<p>Nombre del instituto</p>
+<p>Salida esperada:</p>
+<div class="sourceCode" id="cb2">
+  <pre
+    class="sourceCode xml"
+  ><code class="sourceCode xml"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">nombre</span>&gt;Campus Digital&lt;/<span class="kw">nombre</span>&gt;</span></code></pre>
+</div>
+<p>Consulta XPath:</p>
+<pre class="xpath"><code>/ies/nombre</code></pre>
+<p>Salida real:</p>
+<div class="sourceCode" id="cb4">
+  <pre
+    class="sourceCode xml"
+  ><code class="
+  
+  xml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">nombre</span>&gt;Campus Digital&lt;/<span class="kw">nombre</span>&gt;</span></code></pre>
+</div>
+<h3 id="actividad-1.2">Actividad 1.2</h3>
+<p>Página web del Instituto.</p>
+<p>Consulta XPath:</p>
+<pre class="xpath"><code>/ies/web/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>https://campusdigitalfp.com/</code></pre>
+<p>Salida esperada:</p>
+<pre class="plaintext"><code>https://campusdigitalfp.com/</code></pre>
+<h3 id="actividad-1.3">Actividad 1.3</h3>
+<p>Nombre de los Ciclos Formativos.</p>
+<p>Consulta XPath:</p>
+<pre class="xpath"><code>/ies/ciclos/ciclo/nombre/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>Administración de Sistemas Informáticos en Red
+Desarrollo de Aplicaciones Multiplataforma
+Sistemas Microinformáticos y Redes</code></pre>
+<p>Salida esperada:</p>
+<pre class="plaintext"><code>Administración de Sistemas Informáticos en Red
+Desarrollo de Aplicaciones Multiplataforma
+Sistemas Microinformáticos y Redes</code></pre>
+<h3 id="actividad-1.4">Actividad 1.4</h3>
+<p>Siglas por las que se conocen los Ciclos Formativos.</p>
+<p>Consulta XPath:</p>
+<pre class="xpath"><code>/ies/ciclos/ciclo/@id</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>id=ASIR
+id=DAM
+id=SMR</code></pre>
+<p>Salida esperada:</p>
+<pre class="xpath"><code>id=&quot;ASIR&quot;
+id=&quot;DAM&quot;
+id=&quot;SMR&quot;</code></pre>
+<h3 id="actividad-1.5">Actividad 1.5</h3>
+<p>
+  Años en los que se publicaron los decretos de título de los Ciclos Formativos.
+</p>
+<p>Salida esperada:</p>
+<pre class="xpath"><code>año=&quot;2009&quot;
+año=&quot;2010&quot;
+año=&quot;2008&quot;</code></pre>
+<p>Consulta XPath:</p>
+<pre class="xpath"><code>/ies/ciclos/ciclo/decretoTitulo/@año</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>año=2009
+año=2010
+año=2008</code></pre>
+<h3 id="actividad-1.6">Actividad 1.6</h3>
+<p>
+  Ciclos Formativos de Grado Medio (se trata de obtener el elemento
+  <code>&lt;ciclo&gt;</code> completo).
+</p>
+<p>Salida esperada:</p>
+<blockquote>
+  <p>
+    Resuelva este ejercicio de dos formas distintas, en un único paso de
+    búsqueda y en dos pasos de búsqueda.
+  </p>
+</blockquote>
+<div class="sourceCode" id="cb17">
+  <pre
+    class="sourceCode xml"
+  ><code class="sourceCode xml"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">ciclo</span><span class="ot"> id=</span><span class="st">&quot;SMR&quot;</span>&gt;</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">nombre</span>&gt;Sistemas Microinformáticos y Redes&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">grado</span>&gt;Medio&lt;/<span class="kw">grado</span>&gt;</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">decretoTitulo</span><span class="ot"> año=</span><span class="st">&quot;2008&quot;</span>/&gt;</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ciclo</span>&gt;</span></code></pre>
+</div>
+<p>Consulta XPath:</p>
+<p>En un único paso de búsqueda:</p>
+<pre class="xpath"><code>/ies/ciclos/ciclo[grado=&#39;Medio&#39;]</code></pre>
+<p>En dos pasos de búsqueda:</p>
+<pre
+  class="xpath"
+><code>/ies/ciclos/ciclo[grado=&#39;Medio&#39;]/grado/..</code></pre>
+<p>Salida real:</p>
+<div class="sourceCode" id="cb20">
+  <pre
+    class="sourceCode xml"
+  ><code class="sourceCode xml"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">ciclo</span><span class="ot"> id=</span><span class="st">&quot;SMR&quot;</span>&gt;</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">nombre</span>&gt;Sistemas Microinformáticos y Redes&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">grado</span>&gt;Medio&lt;/<span class="kw">grado</span>&gt;</span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">decretoTitulo</span><span class="ot"> año=</span><span class="st">&quot;2008&quot;</span>/&gt;</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ciclo</span>&gt;</span></code></pre>
+</div>
+<h3 id="actividad-1.7">Actividad 1.7</h3>
+<p>Nombre de los Ciclos Formativos de Grado Superior.</p>
+<p>Salida esperada:</p>
+<blockquote>
+  <p>
+    Resuelva este ejercicio de dos formas distintas, en un único paso de
+    búsqueda y en dos pasos de búsqueda.
+  </p>
+</blockquote>
+<div class="sourceCode" id="cb21">
+  <pre
+    class="sourceCode xml"
+  ><code class="sourceCode xml"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">nombre</span>&gt;Desarrollo de Aplicaciones Multiplataforma&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">nombre</span>&gt;Administración de Sistemas Informáticos en Red&lt;/<span class="kw">nombre</span>&gt;</span></code></pre>
+</div>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>/ies/ciclos/ciclo[grado=&#39;Superior&#39;]/nombre</code></pre>
+<p>Salida real:</p>
+<div class="sourceCode" id="cb23">
+  <pre
+    class="sourceCode xml"
+  ><code class="sourceCode xml"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">nombre</span>&gt;Administración de Sistemas Informáticos en Red&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">nombre</span>&gt;Desarrollo de Aplicaciones Multiplataforma&lt;/<span class="kw">nombre</span>&gt;</span></code></pre>
+</div>
+<h3 id="actividad-1.8">Actividad 1.8</h3>
+<p>Nombre de los Ciclos Formativos anteriores a 2010.</p>
+<p>Salida esperada:</p>
+<blockquote>
+  <p>
+    Resuelva este ejercicio de dos formas distintas, en un único paso de
+    búsqueda y en dos pasos de búsqueda.
+  </p>
+</blockquote>
+<pre class="plaintext"><code>Administración de Sistemas Informáticos en Red
+Sistemas Microinformáticos y Redes</code></pre>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>/ies/ciclos/ciclo[decretoTitulo/@año &lt; &#39;2010&#39;]/nombre/text()
+</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>Administración de Sistemas Informáticos en Red
+Sistemas Microinformáticos y Redes</code></pre>
+<h3 id="actividad-1.9">Actividad 1.9</h3>
+<p>Nombre de los Ciclos Formativos de 2008 o 2010.</p>
+<p>Salida esperada:</p>
+<blockquote>
+  <p>
+    Resuelva este ejercicio de dos formas distintas, en un único paso de
+    búsqueda y en dos pasos de búsqueda.
+  </p>
+</blockquote>
+<pre class="plaintext"><code>Desarrollo de Aplicaciones Multiplataforma
+Sistemas Microinformáticos y Redes</code></pre>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>/ies/ciclos/ciclo[decretoTitulo/@año=&#39;2008&#39; or decretoTitulo/@año=&#39;2010&#39;]/nombre/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>Desarrollo de Aplicaciones Multiplataforma
+Sistemas Microinformáticos y Redes</code></pre>
+<h3 id="actividad-1.9-1">Actividad 1.9</h3>
+<p>Invéntate tu propia consulta.</p>
+<p>Nombre del ciclo con la menor antigüedad (año del decreto más reciente).</p>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>/ies/ciclos/ciclo[decretoTitulo/@año = max(/ies/ciclos/ciclo/decretoTitulo/@año)]/nombre</code></pre>
+<p>Salida real:</p>
+<div class="sourceCode" id="cb31">
+  <pre
+    class="sourceCode xml"
+  ><code class="sourceCode xml"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">nombre</span>&gt;Desarrollo de Aplicaciones Multiplataforma&lt;/<span class="kw">nombre</span>&gt;</span></code></pre>
+</div>
+<h2 id="actividad-2">Actividad 2</h2>
+<p>
+  Dado el siguiente documento XML, escriba las expresiones XPath que devuelvan
+  la respuesta deseada.
+</p>
+<div class="sourceCode" id="cb32">
+  <pre
+    class="sourceCode xml"
+  ><code class="sourceCode xml"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;?xml</span><span class="ot"> version=</span><span class="st">&quot;1.0&quot;</span><span class="ot"> encoding=</span><span class="st">&quot;UTF-8&quot;</span><span class="fu">?&gt;</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">ies</span>&gt;</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">modulos</span>&gt;</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">modulo</span><span class="ot"> id=</span><span class="st">&quot;0228&quot;</span>&gt;</span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">nombre</span>&gt;Aplicaciones web&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">curso</span>&gt;2&lt;/<span class="kw">curso</span>&gt;</span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">horasSemanales</span>&gt;4&lt;/<span class="kw">horasSemanales</span>&gt;</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">ciclo</span>&gt;SMR&lt;/<span class="kw">ciclo</span>&gt;</span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">modulo</span>&gt;</span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">modulo</span><span class="ot"> id=</span><span class="st">&quot;0372&quot;</span>&gt;</span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">nombre</span>&gt;Gestión de bases de datos&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">curso</span>&gt;1&lt;/<span class="kw">curso</span>&gt;</span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">horasSemanales</span>&gt;5&lt;/<span class="kw">horasSemanales</span>&gt;</span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">ciclo</span>&gt;ASIR&lt;/<span class="kw">ciclo</span>&gt;</span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">modulo</span>&gt;</span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">modulo</span><span class="ot"> id=</span><span class="st">&quot;0373&quot;</span>&gt;</span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">nombre</span>&gt;Lenguajes de marcas y sistemas de gestión de información&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">curso</span>&gt;1&lt;/<span class="kw">curso</span>&gt;</span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">horasSemanales</span>&gt;3&lt;/<span class="kw">horasSemanales</span>&gt;</span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">ciclo</span>&gt;ASIR&lt;/<span class="kw">ciclo</span>&gt;</span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">ciclo</span>&gt;DAW&lt;/<span class="kw">ciclo</span>&gt;</span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">modulo</span>&gt;</span>
+<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">modulo</span><span class="ot"> id=</span><span class="st">&quot;0378&quot;</span>&gt;</span>
+<span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">nombre</span>&gt;Seguridad y Alta Disponibilidad&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb32-25"><a href="#cb32-25" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">curso</span>&gt;2&lt;/<span class="kw">curso</span>&gt;</span>
+<span id="cb32-26"><a href="#cb32-26" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">horasSemanales</span>&gt;2&lt;/<span class="kw">horasSemanales</span>&gt;</span>
+<span id="cb32-27"><a href="#cb32-27" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">ciclo</span>&gt;ASIR&lt;/<span class="kw">ciclo</span>&gt;</span>
+<span id="cb32-28"><a href="#cb32-28" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">modulo</span>&gt;</span>
+<span id="cb32-29"><a href="#cb32-29" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">modulos</span>&gt;</span>
+<span id="cb32-30"><a href="#cb32-30" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ies</span>&gt;</span></code></pre>
+</div>
+<h3 id="actividad-2.1">Actividad 2.1</h3>
+<p>Nombre de los módulos que se imparten en el Instituto.</p>
+<p>Salida esperada:</p>
+<pre class="plaintext"><code>Aplicaciones web
+Gestión de bases de datos
+Lenguajes de marcas y sistemas de gestión de información
+Seguridad y Alta Disponibilidad</code></pre>
+<p>Consulta XPath:</p>
+<pre class="xpath"><code>/ies/modulos//nombre/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>Aplicaciones web
+Gestión de bases de datos
+Lenguajes de marcas y sistemas de gestión de información
+Seguridad y Alta Disponibilidad</code></pre>
+<h3 id="actividad-2.2">Actividad 2.2</h3>
+<p>Nombre de los módulos del ciclo ASIR.</p>
+<p>Salida esperada:</p>
+<pre class="plaintext"><code>Gestión de bases de datos
+Lenguajes de marcas y sistemas de gestión de información
+Seguridad y Alta Disponibilidad</code></pre>
+<p>Consulta XPath:</p>
+<pre class="xpath"><code>/ies/modulos/modulo[ciclo=&#39;ASIR&#39;]/nombre/text()
+</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>Gestión de bases de datos
+Lenguajes de marcas y sistemas de gestión de información
+Seguridad y Alta Disponibilidad</code></pre>
+<h3 id="actividad-2.3">Actividad 2.3</h3>
+<p>
+  Nombre de los módulos que se imparten en el segundo curso de cualquier ciclo.
+</p>
+<p>Salida esperada:</p>
+<pre class="plaintext"><code>Aplicaciones web
+Seguridad y Alta Disponibilidad</code></pre>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>/ies/modulos/modulo[curso=&#39;2&#39;]/nombre/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>Aplicaciones web
+Seguridad y Alta Disponibilidad</code></pre>
+<h3 id="actividad-2.4">Actividad 2.4</h3>
+<p>Nombre de los módulos de menos de 5 horas semanales.</p>
+<p>Salida esperada:</p>
+<pre class="plaintext"><code>Aplicaciones web
+Lenguajes de marcas y sistemas de gestión de información
+Seguridad y Alta Disponibilidad</code></pre>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>/ies/modulos/modulo[horasSemanales&lt;5]/nombre/text()</code></pre>
+<p>Salida real:</p>
+<div class="sourceCode" id="cb44">
+  <pre
+    class="sourceCode xml"
+  ><code class="sourceCode xml"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>Aplicaciones web</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>Lenguajes de marcas y sistemas de gestión de información</span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>Seguridad y Alta Disponibilidad</span></code></pre>
+</div>
+<h3 id="actividad-2.5">Actividad 2.5</h3>
+<p>Nombre de los módulos que se imparten en el primer curso de ASIR.</p>
+<p>Salida esperada:</p>
+<pre class="plaintext"><code>Gestión de bases de datos
+Lenguajes de marcas y sistemas de gestión de información</code></pre>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>/ies/modulos/modulo[curso=&#39;1&#39; and ciclo=&#39;ASIR&#39;]/nombre/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>Gestión de bases de datos
+Lenguajes de marcas y sistemas de gestión de información</code></pre>
+<h3 id="actividad-2.6">Actividad 2.6</h3>
+<p>Horas semanales de los módulos de más de 3 horas semanales.</p>
+<p>Salida esperada:</p>
+<pre class="plaintext"><code>4
+5</code></pre>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>/ies/modulos/modulo[horasSemanales&gt;3]/horasSemanales/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>4
+5</code></pre>
+<h3 id="actividad-2.7">Actividad 2.7</h3>
+<p>Invéntate tu propia consulta.</p>
+<p>Nombre del módulo que se imparte en más de un ciclo. Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>/ies/modulos/modulo[count(ciclo)&gt;1]/nombre/text()</code></pre>
+<p>Salida real:</p>
+<pre
+  class="plaintext"
+><code>Lenguajes de marcas y sistemas de gestión de información</code></pre>
+<h2 id="actividad-3">Actividad 3</h2>
+<p>
+  Dado el siguiente documento XML, escriba las expresiones XPath que devuelvan
+  la respuesta deseada.
+</p>
+<div class="sourceCode" id="cb53">
+  <pre
+    class="sourceCode xml"
+  ><code class="sourceCode xml"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;?xml</span><span class="ot"> version=</span><span class="st">&quot;1.0&quot;</span><span class="ot"> encoding=</span><span class="st">&quot;UTF-8&quot;</span><span class="fu">?&gt;</span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">ies</span>&gt;</span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">nombre</span>&gt;Campus Digital&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb53-4"><a href="#cb53-4" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">web</span>&gt;https://campusdigitalfp.com/&lt;/<span class="kw">web</span>&gt;</span>
+<span id="cb53-5"><a href="#cb53-5" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">ciclos</span>&gt;</span>
+<span id="cb53-6"><a href="#cb53-6" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">ciclo</span><span class="ot"> id=</span><span class="st">&quot;ASIR&quot;</span>&gt;</span>
+<span id="cb53-7"><a href="#cb53-7" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">nombre</span>&gt;Administración de Sistemas Informáticos en Red&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb53-8"><a href="#cb53-8" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">grado</span>&gt;Superior&lt;/<span class="kw">grado</span>&gt;</span>
+<span id="cb53-9"><a href="#cb53-9" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">decretoTitulo</span><span class="ot"> año=</span><span class="st">&quot;2009&quot;</span> /&gt;</span>
+<span id="cb53-10"><a href="#cb53-10" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">ciclo</span>&gt;</span>
+<span id="cb53-11"><a href="#cb53-11" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">ciclo</span><span class="ot"> id=</span><span class="st">&quot;DAW&quot;</span>&gt;</span>
+<span id="cb53-12"><a href="#cb53-12" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">nombre</span>&gt;Desarrollo de Aplicaciones Web&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb53-13"><a href="#cb53-13" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">grado</span>&gt;Superior&lt;/<span class="kw">grado</span>&gt;</span>
+<span id="cb53-14"><a href="#cb53-14" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">decretoTitulo</span><span class="ot"> año=</span><span class="st">&quot;2010&quot;</span> /&gt;</span>
+<span id="cb53-15"><a href="#cb53-15" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">ciclo</span>&gt;</span>
+<span id="cb53-16"><a href="#cb53-16" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">ciclo</span><span class="ot"> id=</span><span class="st">&quot;SMR&quot;</span>&gt;</span>
+<span id="cb53-17"><a href="#cb53-17" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">nombre</span>&gt;Sistemas Microinformáticos y Redes&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb53-18"><a href="#cb53-18" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">grado</span>&gt;Medio&lt;/<span class="kw">grado</span>&gt;</span>
+<span id="cb53-19"><a href="#cb53-19" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">decretoTitulo</span><span class="ot"> año=</span><span class="st">&quot;2008&quot;</span> /&gt;</span>
+<span id="cb53-20"><a href="#cb53-20" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">ciclo</span>&gt;</span>
+<span id="cb53-21"><a href="#cb53-21" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">ciclos</span>&gt;</span>
+<span id="cb53-22"><a href="#cb53-22" aria-hidden="true" tabindex="-1"></a>  &lt;<span class="kw">modulos</span>&gt;</span>
+<span id="cb53-23"><a href="#cb53-23" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">modulo</span><span class="ot"> id=</span><span class="st">&quot;0228&quot;</span>&gt;</span>
+<span id="cb53-24"><a href="#cb53-24" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">nombre</span>&gt;Aplicaciones web&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb53-25"><a href="#cb53-25" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">curso</span>&gt;2&lt;/<span class="kw">curso</span>&gt;</span>
+<span id="cb53-26"><a href="#cb53-26" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">horasSemanales</span>&gt;4&lt;/<span class="kw">horasSemanales</span>&gt;</span>
+<span id="cb53-27"><a href="#cb53-27" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">ciclo</span>&gt;SMR&lt;/<span class="kw">ciclo</span>&gt;</span>
+<span id="cb53-28"><a href="#cb53-28" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">modulo</span>&gt;</span>
+<span id="cb53-29"><a href="#cb53-29" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">modulo</span><span class="ot"> id=</span><span class="st">&quot;0372&quot;</span>&gt;</span>
+<span id="cb53-30"><a href="#cb53-30" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">nombre</span>&gt;Gestión de bases de datos&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb53-31"><a href="#cb53-31" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">curso</span>&gt;1&lt;/<span class="kw">curso</span>&gt;</span>
+<span id="cb53-32"><a href="#cb53-32" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">horasSemanales</span>&gt;5&lt;/<span class="kw">horasSemanales</span>&gt;</span>
+<span id="cb53-33"><a href="#cb53-33" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">ciclo</span>&gt;ASIR&lt;/<span class="kw">ciclo</span>&gt;</span>
+<span id="cb53-34"><a href="#cb53-34" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">modulo</span>&gt;</span>
+<span id="cb53-35"><a href="#cb53-35" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">modulo</span><span class="ot"> id=</span><span class="st">&quot;0373&quot;</span>&gt;</span>
+<span id="cb53-36"><a href="#cb53-36" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">nombre</span>&gt;Lenguajes de marcas y sistemas de gestión de información&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb53-37"><a href="#cb53-37" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">curso</span>&gt;1&lt;/<span class="kw">curso</span>&gt;</span>
+<span id="cb53-38"><a href="#cb53-38" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">horasSemanales</span>&gt;3&lt;/<span class="kw">horasSemanales</span>&gt;</span>
+<span id="cb53-39"><a href="#cb53-39" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">ciclo</span>&gt;ASIR&lt;/<span class="kw">ciclo</span>&gt;</span>
+<span id="cb53-40"><a href="#cb53-40" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">ciclo</span>&gt;DAW&lt;/<span class="kw">ciclo</span>&gt;</span>
+<span id="cb53-41"><a href="#cb53-41" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">modulo</span>&gt;</span>
+<span id="cb53-42"><a href="#cb53-42" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">modulo</span><span class="ot"> id=</span><span class="st">&quot;0378&quot;</span>&gt;</span>
+<span id="cb53-43"><a href="#cb53-43" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">nombre</span>&gt;Seguridad y Alta Disponibilidad&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb53-44"><a href="#cb53-44" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">curso</span>&gt;2&lt;/<span class="kw">curso</span>&gt;</span>
+<span id="cb53-45"><a href="#cb53-45" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">horasSemanales</span>&gt;2&lt;/<span class="kw">horasSemanales</span>&gt;</span>
+<span id="cb53-46"><a href="#cb53-46" aria-hidden="true" tabindex="-1"></a>      &lt;<span class="kw">ciclo</span>&gt;ASIR&lt;/<span class="kw">ciclo</span>&gt;</span>
+<span id="cb53-47"><a href="#cb53-47" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">modulo</span>&gt;</span>
+<span id="cb53-48"><a href="#cb53-48" aria-hidden="true" tabindex="-1"></a>  &lt;/<span class="kw">modulos</span>&gt;</span>
+<span id="cb53-49"><a href="#cb53-49" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">ies</span>&gt;</span></code></pre>
+</div>
+<h3 id="actividad-3.1">Actividad 3.1</h3>
+<p>
+  Nombre de los módulos del ciclo “Sistemas Microinformáticos y Redes” (en la
+  expresión final no deben aparecer las siglas SMR).
+</p>
+<p>Salida esperada:</p>
+<pre class="plaintext"><code>Aplicaciones web</code></pre>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>/ies/modulos/modulo[ciclo=&#39;SMR&#39;]/nombre/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>Aplicaciones web</code></pre>
+<h3 id="actividad-3.2">Actividad 3.2</h3>
+<p>
+  Nombre de los ciclos que incluyen el módulo “Lenguajes de marcas y sistemas de
+  gestión de información”.
+</p>
+<p>Salida esperada:</p>
+<pre class="plaintext"><code>Administración de Sistemas Informáticos en Red
+Desarrollo de Aplicaciones Web</code></pre>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>//ciclos/ciclo[@id=/ies/modulos/modulo[nombre=&#39;Lenguajes de marcas y sistemas de gestión de información&#39;]/ciclo]/nombre/node()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>Administración de Sistemas Informáticos en Red
+Desarrollo de Aplicaciones Web</code></pre>
+<h3 id="actividad-3.3">Actividad 3.3</h3>
+<p>Nombre de los módulos de ciclos de Grado Superior.</p>
+<p>Salida esperada:</p>
+<pre class="plaintext"><code>Gestión de bases de datos
+Lenguajes de marcas y sistemas de gestión de información
+Seguridad y Alta Disponibilidad</code></pre>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>/ies/modulos/modulo[ciclo = /ies/ciclos/ciclo[grado=&#39;Superior&#39;]/@id]/nombre/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>Gestión de bases de datos
+Lenguajes de marcas y sistemas de gestión de información
+Seguridad y Alta Disponibilidad</code></pre>
+<h3 id="actividad-3.4">Actividad 3.4</h3>
+<p>Nombre de los módulos de ciclos cuyo título se aprobó en 2008.</p>
+<p>Salida esperada:</p>
+<pre class="plaintext"><code>Aplicaciones web</code></pre>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>//modulo[ciclo=/ies/ciclos/ciclo[decretoTitulo/@año=&#39;2008&#39;]/@id]/nombre/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>Aplicaciones web</code></pre>
+<h3 id="actividad-3.5">Actividad 3.5</h3>
+<p>Grado de los ciclos con módulos de primer curso.</p>
+<p>Salida esperada:</p>
+<pre class="plaintext"><code>Superior
+Superior</code></pre>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>//ciclos/ciclo[@id=/ies/modulos/modulo[curso=&#39;1&#39;]/ciclo]/grado/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>Superior
+Superior</code></pre>
+<h3 id="actividad-3.6">Actividad 3.6</h3>
+<p>Invéntate tu propia consulta.</p>
+<p>Nombre de los módulos que son impartidos en más de un ciclo</p>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>//modulo[count(ciclo) &gt; 1]/nombre/text()</code></pre>
+<p>Salida real:</p>
+<pre
+  class="plaintext"
+><code>Lenguajes de marcas y sistemas de gestión de información</code></pre>
+<h2 id="voluntaria-actividad-4">(Voluntaria) Actividad 4</h2>
+<p>Dado el siguiente fichero XML:</p>
+<div class="sourceCode" id="cb71">
+  <pre
+    class="sourceCode xml"
+  ><code class="sourceCode xml"><span id="cb71-1"><a href="#cb71-1" aria-hidden="true" tabindex="-1"></a><span class="fu">&lt;?xml</span><span class="ot"> version=</span><span class="st">&quot;1.0&quot;</span><span class="ot"> encoding=</span><span class="st">&quot;UTF-8&quot;</span><span class="fu">?&gt;</span></span>
+<span id="cb71-2"><a href="#cb71-2" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">universidad</span>&gt;</span>
+<span id="cb71-3"><a href="#cb71-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-4"><a href="#cb71-4" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">nombre</span>&gt;Universidad de Zaragoza&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb71-5"><a href="#cb71-5" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">pais</span>&gt;España&lt;/<span class="kw">pais</span>&gt;</span>
+<span id="cb71-6"><a href="#cb71-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-7"><a href="#cb71-7" aria-hidden="true" tabindex="-1"></a>    <span class="co">&lt;!-- GRADOS --&gt;</span></span>
+<span id="cb71-8"><a href="#cb71-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-9"><a href="#cb71-9" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">grados</span>&gt;</span>
+<span id="cb71-10"><a href="#cb71-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-11"><a href="#cb71-11" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">grado</span><span class="ot"> id=</span><span class="st">&quot;g01&quot;</span>&gt;</span>
+<span id="cb71-12"><a href="#cb71-12" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">nombre</span>&gt;Grado en Ingeniería Informática&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb71-13"><a href="#cb71-13" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">plan</span>&gt;2003&lt;/<span class="kw">plan</span>&gt;</span>
+<span id="cb71-14"><a href="#cb71-14" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">creditos</span>&gt;250&lt;/<span class="kw">creditos</span>&gt;</span>
+<span id="cb71-15"><a href="#cb71-15" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">centro</span>&gt;Escuela de Informática&lt;/<span class="kw">centro</span>&gt;</span>
+<span id="cb71-16"><a href="#cb71-16" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">grado</span>&gt;</span>
+<span id="cb71-17"><a href="#cb71-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-18"><a href="#cb71-18" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">grado</span><span class="ot"> id=</span><span class="st">&quot;g02&quot;</span>&gt;</span>
+<span id="cb71-19"><a href="#cb71-19" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">nombre</span>&gt;Grado en Administración y Dirección de Empresas&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb71-20"><a href="#cb71-20" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">plan</span>&gt;2000&lt;/<span class="kw">plan</span>&gt;</span>
+<span id="cb71-21"><a href="#cb71-21" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">creditos</span>&gt;275&lt;/<span class="kw">creditos</span>&gt;</span>
+<span id="cb71-22"><a href="#cb71-22" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">centro</span>&gt;Facultad de Ciencias Sociales&lt;/<span class="kw">centro</span>&gt;</span>
+<span id="cb71-23"><a href="#cb71-23" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">grado</span>&gt;</span>
+<span id="cb71-24"><a href="#cb71-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-25"><a href="#cb71-25" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">grado</span><span class="ot"> id=</span><span class="st">&quot;g03&quot;</span>&gt;</span>
+<span id="cb71-26"><a href="#cb71-26" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">nombre</span>&gt;Grado en Relaciones Laborales&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb71-27"><a href="#cb71-27" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">plan</span>&gt;2000&lt;/<span class="kw">plan</span>&gt;</span>
+<span id="cb71-28"><a href="#cb71-28" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">creditos</span>&gt;280&lt;/<span class="kw">creditos</span>&gt;</span>
+<span id="cb71-29"><a href="#cb71-29" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">centro</span>&gt;Facultad de Ciencias Sociales&lt;/<span class="kw">centro</span>&gt;</span>
+<span id="cb71-30"><a href="#cb71-30" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">subdirector</span>&gt;Alfonso Martín Luque&lt;/<span class="kw">subdirector</span>&gt;</span>
+<span id="cb71-31"><a href="#cb71-31" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">grado</span>&gt;</span>
+<span id="cb71-32"><a href="#cb71-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-33"><a href="#cb71-33" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">grado</span><span class="ot"> id=</span><span class="st">&quot;g04&quot;</span>&gt;</span>
+<span id="cb71-34"><a href="#cb71-34" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">nombre</span>&gt;Grado en Quimica&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb71-35"><a href="#cb71-35" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">plan</span>&gt;2003&lt;/<span class="kw">plan</span>&gt;</span>
+<span id="cb71-36"><a href="#cb71-36" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">creditos</span>&gt;175&lt;/<span class="kw">creditos</span>&gt;</span>
+<span id="cb71-37"><a href="#cb71-37" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">centro</span>&gt;Facultad de Ciencias Experimentales&lt;/<span class="kw">centro</span>&gt;</span>
+<span id="cb71-38"><a href="#cb71-38" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">grado</span>&gt;</span>
+<span id="cb71-39"><a href="#cb71-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-40"><a href="#cb71-40" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">grado</span><span class="ot"> id=</span><span class="st">&quot;g05&quot;</span>&gt;</span>
+<span id="cb71-41"><a href="#cb71-41" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">nombre</span>&gt;Grado en Biotecnología&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb71-42"><a href="#cb71-42" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">plan</span>&gt;2000&lt;/<span class="kw">plan</span>&gt;</span>
+<span id="cb71-43"><a href="#cb71-43" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">creditos</span>&gt;175&lt;/<span class="kw">creditos</span>&gt;</span>
+<span id="cb71-44"><a href="#cb71-44" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">centro</span>&gt;Facultad de Ciencias&lt;/<span class="kw">centro</span>&gt;</span>
+<span id="cb71-45"><a href="#cb71-45" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">grado</span>&gt;</span>
+<span id="cb71-46"><a href="#cb71-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-47"><a href="#cb71-47" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">grado</span><span class="ot"> id=</span><span class="st">&quot;g06&quot;</span>&gt;</span>
+<span id="cb71-48"><a href="#cb71-48" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">nombre</span>&gt;Grado en Humanidades&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb71-49"><a href="#cb71-49" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">plan</span>&gt;1980&lt;/<span class="kw">plan</span>&gt;</span>
+<span id="cb71-50"><a href="#cb71-50" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">creditos</span>&gt;475&lt;/<span class="kw">creditos</span>&gt;</span>
+<span id="cb71-51"><a href="#cb71-51" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">centro</span>&gt;Facultad de Humanidades&lt;/<span class="kw">centro</span>&gt;</span>
+<span id="cb71-52"><a href="#cb71-52" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">grado</span>&gt;</span>
+<span id="cb71-53"><a href="#cb71-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-54"><a href="#cb71-54" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">grados</span>&gt;</span>
+<span id="cb71-55"><a href="#cb71-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-56"><a href="#cb71-56" aria-hidden="true" tabindex="-1"></a>    <span class="co">&lt;!-- ASIGNATURAS --&gt;</span></span>
+<span id="cb71-57"><a href="#cb71-57" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-58"><a href="#cb71-58" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">asignaturas</span>&gt;</span>
+<span id="cb71-59"><a href="#cb71-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-60"><a href="#cb71-60" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">asignatura</span><span class="ot"> id=</span><span class="st">&quot;a01&quot;</span><span class="ot"> titulacion=</span><span class="st">&quot;g01&quot;</span>&gt;</span>
+<span id="cb71-61"><a href="#cb71-61" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">nombre</span>&gt;Ofimática&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb71-62"><a href="#cb71-62" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">creditosTeoricos</span>&gt;3&lt;/<span class="kw">creditosTeoricos</span>&gt;</span>
+<span id="cb71-63"><a href="#cb71-63" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">creditosPracticos</span>&gt;1.5&lt;/<span class="kw">creditosPracticos</span>&gt;</span>
+<span id="cb71-64"><a href="#cb71-64" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">trimestre</span>&gt;1&lt;/<span class="kw">trimestre</span>&gt;</span>
+<span id="cb71-65"><a href="#cb71-65" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">asignatura</span>&gt;</span>
+<span id="cb71-66"><a href="#cb71-66" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-67"><a href="#cb71-67" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">asignatura</span><span class="ot"> id=</span><span class="st">&quot;a02&quot;</span><span class="ot"> titulacion=</span><span class="st">&quot;g01&quot;</span>&gt;</span>
+<span id="cb71-68"><a href="#cb71-68" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">nombre</span>&gt;Ingeniería del Software&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb71-69"><a href="#cb71-69" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">creditosTeoricos</span>&gt;6&lt;/<span class="kw">creditosTeoricos</span>&gt;</span>
+<span id="cb71-70"><a href="#cb71-70" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">creditosPracticos</span>&gt;1.5&lt;/<span class="kw">creditosPracticos</span>&gt;</span>
+<span id="cb71-71"><a href="#cb71-71" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">trimestre</span>&gt;2&lt;/<span class="kw">trimestre</span>&gt;</span>
+<span id="cb71-72"><a href="#cb71-72" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">asignatura</span>&gt;</span>
+<span id="cb71-73"><a href="#cb71-73" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-74"><a href="#cb71-74" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">asignatura</span><span class="ot"> id=</span><span class="st">&quot;a03&quot;</span><span class="ot"> titulacion=</span><span class="st">&quot;g02&quot;</span>&gt;</span>
+<span id="cb71-75"><a href="#cb71-75" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">nombre</span>&gt;Administración de Empresas&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb71-76"><a href="#cb71-76" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">creditosTeoricos</span>&gt;4&lt;/<span class="kw">creditosTeoricos</span>&gt;</span>
+<span id="cb71-77"><a href="#cb71-77" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">creditosPracticos</span>&gt;1.5&lt;/<span class="kw">creditosPracticos</span>&gt;</span>
+<span id="cb71-78"><a href="#cb71-78" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">trimestre</span>&gt;1&lt;/<span class="kw">trimestre</span>&gt;</span>
+<span id="cb71-79"><a href="#cb71-79" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">asignatura</span>&gt;</span>
+<span id="cb71-80"><a href="#cb71-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-81"><a href="#cb71-81" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">asignatura</span><span class="ot"> id=</span><span class="st">&quot;a04&quot;</span><span class="ot"> titulacion=</span><span class="st">&quot;g02&quot;</span>&gt;</span>
+<span id="cb71-82"><a href="#cb71-82" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">nombre</span>&gt;Derecho Internacional&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb71-83"><a href="#cb71-83" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">creditosTeoricos</span>&gt;4&lt;/<span class="kw">creditosTeoricos</span>&gt;</span>
+<span id="cb71-84"><a href="#cb71-84" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">creditosPracticos</span>&gt;5&lt;/<span class="kw">creditosPracticos</span>&gt;</span>
+<span id="cb71-85"><a href="#cb71-85" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">trimestre</span>&gt;1&lt;/<span class="kw">trimestre</span>&gt;</span>
+<span id="cb71-86"><a href="#cb71-86" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">asignatura</span>&gt;</span>
+<span id="cb71-87"><a href="#cb71-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-88"><a href="#cb71-88" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">asignatura</span><span class="ot"> id=</span><span class="st">&quot;a05&quot;</span><span class="ot"> titulacion=</span><span class="st">&quot;g04&quot;</span>&gt;</span>
+<span id="cb71-89"><a href="#cb71-89" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">nombre</span>&gt;Pedagogía&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb71-90"><a href="#cb71-90" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">creditosTeoricos</span>&gt;4&lt;/<span class="kw">creditosTeoricos</span>&gt;</span>
+<span id="cb71-91"><a href="#cb71-91" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">creditosPracticos</span>&gt;1.5&lt;/<span class="kw">creditosPracticos</span>&gt;</span>
+<span id="cb71-92"><a href="#cb71-92" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">trimestre</span>&gt;2&lt;/<span class="kw">trimestre</span>&gt;</span>
+<span id="cb71-93"><a href="#cb71-93" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">asignatura</span>&gt;</span>
+<span id="cb71-94"><a href="#cb71-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-95"><a href="#cb71-95" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">asignatura</span><span class="ot"> id=</span><span class="st">&quot;a06&quot;</span><span class="ot"> titulacion=</span><span class="st">&quot;g03&quot;</span>&gt;</span>
+<span id="cb71-96"><a href="#cb71-96" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">nombre</span>&gt;Didáctica&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb71-97"><a href="#cb71-97" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">creditosTeoricos</span>&gt;4&lt;/<span class="kw">creditosTeoricos</span>&gt;</span>
+<span id="cb71-98"><a href="#cb71-98" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">creditosPracticos</span>&gt;3&lt;/<span class="kw">creditosPracticos</span>&gt;</span>
+<span id="cb71-99"><a href="#cb71-99" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">trimestre</span>&gt;2&lt;/<span class="kw">trimestre</span>&gt;</span>
+<span id="cb71-100"><a href="#cb71-100" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">asignatura</span>&gt;</span>
+<span id="cb71-101"><a href="#cb71-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-102"><a href="#cb71-102" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">asignatura</span><span class="ot"> id=</span><span class="st">&quot;a07&quot;</span><span class="ot"> titulacion=</span><span class="st">&quot;g04&quot;</span>&gt;</span>
+<span id="cb71-103"><a href="#cb71-103" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">nombre</span>&gt;Tecnología de los Alimentos&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb71-104"><a href="#cb71-104" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">creditosTeoricos</span>&gt;1.5&lt;/<span class="kw">creditosTeoricos</span>&gt;</span>
+<span id="cb71-105"><a href="#cb71-105" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">creditosPracticos</span>&gt;7.5&lt;/<span class="kw">creditosPracticos</span>&gt;</span>
+<span id="cb71-106"><a href="#cb71-106" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">trimestre</span>&gt;2&lt;/<span class="kw">trimestre</span>&gt;</span>
+<span id="cb71-107"><a href="#cb71-107" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">asignatura</span>&gt;</span>
+<span id="cb71-108"><a href="#cb71-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-109"><a href="#cb71-109" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">asignatura</span><span class="ot"> id=</span><span class="st">&quot;a08&quot;</span><span class="ot"> titulacion=</span><span class="st">&quot;g01&quot;</span>&gt;</span>
+<span id="cb71-110"><a href="#cb71-110" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">nombre</span>&gt;Bases de Datos&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb71-111"><a href="#cb71-111" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">creditosTeoricos</span>&gt;4.5&lt;/<span class="kw">creditosTeoricos</span>&gt;</span>
+<span id="cb71-112"><a href="#cb71-112" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">creditosPracticos</span>&gt;5.5&lt;/<span class="kw">creditosPracticos</span>&gt;</span>
+<span id="cb71-113"><a href="#cb71-113" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">trimestre</span>&gt;1&lt;/<span class="kw">trimestre</span>&gt;</span>
+<span id="cb71-114"><a href="#cb71-114" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">asignatura</span>&gt;</span>
+<span id="cb71-115"><a href="#cb71-115" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-116"><a href="#cb71-116" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">asignatura</span><span class="ot"> id=</span><span class="st">&quot;a09&quot;</span><span class="ot"> titulacion=</span><span class="st">&quot;g06&quot;</span>&gt;</span>
+<span id="cb71-117"><a href="#cb71-117" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">nombre</span>&gt;Historia del Pensamiento&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb71-118"><a href="#cb71-118" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">creditosTeoricos</span>&gt;6&lt;/<span class="kw">creditosTeoricos</span>&gt;</span>
+<span id="cb71-119"><a href="#cb71-119" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">creditosPracticos</span>&gt;0&lt;/<span class="kw">creditosPracticos</span>&gt;</span>
+<span id="cb71-120"><a href="#cb71-120" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">trimestre</span>&gt;2&lt;/<span class="kw">trimestre</span>&gt;</span>
+<span id="cb71-121"><a href="#cb71-121" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">asignatura</span>&gt;</span>
+<span id="cb71-122"><a href="#cb71-122" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-123"><a href="#cb71-123" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">asignaturas</span>&gt;</span>
+<span id="cb71-124"><a href="#cb71-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-125"><a href="#cb71-125" aria-hidden="true" tabindex="-1"></a>    <span class="co">&lt;!-- ALUMNOS --&gt;</span></span>
+<span id="cb71-126"><a href="#cb71-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-127"><a href="#cb71-127" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">alumnos</span>&gt;</span>
+<span id="cb71-128"><a href="#cb71-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-129"><a href="#cb71-129" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">alumno</span><span class="ot"> id=</span><span class="st">&quot;e01&quot;</span>&gt;</span>
+<span id="cb71-130"><a href="#cb71-130" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">apellido1</span>&gt;Rivas&lt;/<span class="kw">apellido1</span>&gt;</span>
+<span id="cb71-131"><a href="#cb71-131" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">apellido2</span>&gt;Santos&lt;/<span class="kw">apellido2</span>&gt;</span>
+<span id="cb71-132"><a href="#cb71-132" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">nombre</span>&gt;Víctor Manuel&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb71-133"><a href="#cb71-133" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">sexo</span>&gt;Hombre&lt;/<span class="kw">sexo</span>&gt;</span>
+<span id="cb71-134"><a href="#cb71-134" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">estudios</span>&gt;</span>
+<span id="cb71-135"><a href="#cb71-135" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">grado</span><span class="ot"> codigo=</span><span class="st">&quot;g01&quot;</span> /&gt;</span>
+<span id="cb71-136"><a href="#cb71-136" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">asignaturas</span>&gt;</span>
+<span id="cb71-137"><a href="#cb71-137" aria-hidden="true" tabindex="-1"></a>                    &lt;<span class="kw">asignatura</span><span class="ot"> codigo=</span><span class="st">&quot;a01&quot;</span> /&gt;</span>
+<span id="cb71-138"><a href="#cb71-138" aria-hidden="true" tabindex="-1"></a>                    &lt;<span class="kw">asignatura</span><span class="ot"> codigo=</span><span class="st">&quot;a03&quot;</span> /&gt;</span>
+<span id="cb71-139"><a href="#cb71-139" aria-hidden="true" tabindex="-1"></a>                    &lt;<span class="kw">asignatura</span><span class="ot"> codigo=</span><span class="st">&quot;a05&quot;</span> /&gt;</span>
+<span id="cb71-140"><a href="#cb71-140" aria-hidden="true" tabindex="-1"></a>                    &lt;<span class="kw">asignatura</span><span class="ot"> codigo=</span><span class="st">&quot;a09&quot;</span> /&gt;</span>
+<span id="cb71-141"><a href="#cb71-141" aria-hidden="true" tabindex="-1"></a>                &lt;/<span class="kw">asignaturas</span>&gt;</span>
+<span id="cb71-142"><a href="#cb71-142" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">estudios</span>&gt;</span>
+<span id="cb71-143"><a href="#cb71-143" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">alumno</span>&gt;</span>
+<span id="cb71-144"><a href="#cb71-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-145"><a href="#cb71-145" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">alumno</span><span class="ot"> id=</span><span class="st">&quot;e02&quot;</span>&gt;</span>
+<span id="cb71-146"><a href="#cb71-146" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">apellido1</span>&gt;Pérez&lt;/<span class="kw">apellido1</span>&gt;</span>
+<span id="cb71-147"><a href="#cb71-147" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">apellido2</span>&gt;García&lt;/<span class="kw">apellido2</span>&gt;</span>
+<span id="cb71-148"><a href="#cb71-148" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">nombre</span>&gt;Luisa&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb71-149"><a href="#cb71-149" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">sexo</span>&gt;Mujer&lt;/<span class="kw">sexo</span>&gt;</span>
+<span id="cb71-150"><a href="#cb71-150" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">estudios</span>&gt;</span>
+<span id="cb71-151"><a href="#cb71-151" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">grado</span><span class="ot"> codigo=</span><span class="st">&quot;g02&quot;</span> /&gt;</span>
+<span id="cb71-152"><a href="#cb71-152" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">asignaturas</span>&gt;</span>
+<span id="cb71-153"><a href="#cb71-153" aria-hidden="true" tabindex="-1"></a>                    &lt;<span class="kw">asignatura</span><span class="ot"> codigo=</span><span class="st">&quot;a02&quot;</span> /&gt;</span>
+<span id="cb71-154"><a href="#cb71-154" aria-hidden="true" tabindex="-1"></a>                    &lt;<span class="kw">asignatura</span><span class="ot"> codigo=</span><span class="st">&quot;a01&quot;</span> /&gt;</span>
+<span id="cb71-155"><a href="#cb71-155" aria-hidden="true" tabindex="-1"></a>                &lt;/<span class="kw">asignaturas</span>&gt;</span>
+<span id="cb71-156"><a href="#cb71-156" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">proyecto</span>&gt;Web de IBM.com&lt;/<span class="kw">proyecto</span>&gt;</span>
+<span id="cb71-157"><a href="#cb71-157" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">estudios</span>&gt;</span>
+<span id="cb71-158"><a href="#cb71-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-159"><a href="#cb71-159" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">alumno</span>&gt;</span>
+<span id="cb71-160"><a href="#cb71-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-161"><a href="#cb71-161" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">alumno</span><span class="ot"> id=</span><span class="st">&quot;e03&quot;</span><span class="ot"> beca=</span><span class="st">&quot;si&quot;</span>&gt;</span>
+<span id="cb71-162"><a href="#cb71-162" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">apellido1</span>&gt;Pérez&lt;/<span class="kw">apellido1</span>&gt;</span>
+<span id="cb71-163"><a href="#cb71-163" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">apellido2</span>&gt;Romero&lt;/<span class="kw">apellido2</span>&gt;</span>
+<span id="cb71-164"><a href="#cb71-164" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">nombre</span>&gt;Fernando&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb71-165"><a href="#cb71-165" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">sexo</span>&gt;Hombre&lt;/<span class="kw">sexo</span>&gt;</span>
+<span id="cb71-166"><a href="#cb71-166" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">estudios</span>&gt;</span>
+<span id="cb71-167"><a href="#cb71-167" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">grado</span><span class="ot"> codigo=</span><span class="st">&quot;g02&quot;</span> /&gt;</span>
+<span id="cb71-168"><a href="#cb71-168" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">asignaturas</span>&gt;</span>
+<span id="cb71-169"><a href="#cb71-169" aria-hidden="true" tabindex="-1"></a>                    &lt;<span class="kw">asignatura</span><span class="ot"> codigo=</span><span class="st">&quot;a02&quot;</span> /&gt;</span>
+<span id="cb71-170"><a href="#cb71-170" aria-hidden="true" tabindex="-1"></a>                    &lt;<span class="kw">asignatura</span><span class="ot"> codigo=</span><span class="st">&quot;a01&quot;</span> /&gt;</span>
+<span id="cb71-171"><a href="#cb71-171" aria-hidden="true" tabindex="-1"></a>                    &lt;<span class="kw">asignatura</span><span class="ot"> codigo=</span><span class="st">&quot;a04&quot;</span> /&gt;</span>
+<span id="cb71-172"><a href="#cb71-172" aria-hidden="true" tabindex="-1"></a>                    &lt;<span class="kw">asignatura</span><span class="ot"> codigo=</span><span class="st">&quot;a09&quot;</span> /&gt;</span>
+<span id="cb71-173"><a href="#cb71-173" aria-hidden="true" tabindex="-1"></a>                &lt;/<span class="kw">asignaturas</span>&gt;</span>
+<span id="cb71-174"><a href="#cb71-174" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">estudios</span>&gt;</span>
+<span id="cb71-175"><a href="#cb71-175" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">alumno</span>&gt;</span>
+<span id="cb71-176"><a href="#cb71-176" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-177"><a href="#cb71-177" aria-hidden="true" tabindex="-1"></a>        &lt;<span class="kw">alumno</span><span class="ot"> id=</span><span class="st">&quot;e04&quot;</span>&gt;</span>
+<span id="cb71-178"><a href="#cb71-178" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">apellido1</span>&gt;Avalón&lt;/<span class="kw">apellido1</span>&gt;</span>
+<span id="cb71-179"><a href="#cb71-179" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">apellido2</span>&gt;Jiménez&lt;/<span class="kw">apellido2</span>&gt;</span>
+<span id="cb71-180"><a href="#cb71-180" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">nombre</span>&gt;María&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb71-181"><a href="#cb71-181" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">sexo</span>&gt;Mujer&lt;/<span class="kw">sexo</span>&gt;</span>
+<span id="cb71-182"><a href="#cb71-182" aria-hidden="true" tabindex="-1"></a>            &lt;<span class="kw">estudios</span>&gt;</span>
+<span id="cb71-183"><a href="#cb71-183" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">grado</span><span class="ot"> codigo=</span><span class="st">&quot;g01&quot;</span> /&gt;</span>
+<span id="cb71-184"><a href="#cb71-184" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">asignaturas</span>&gt;</span>
+<span id="cb71-185"><a href="#cb71-185" aria-hidden="true" tabindex="-1"></a>                    &lt;<span class="kw">asignatura</span><span class="ot"> codigo=</span><span class="st">&quot;a02&quot;</span> /&gt;</span>
+<span id="cb71-186"><a href="#cb71-186" aria-hidden="true" tabindex="-1"></a>                    &lt;<span class="kw">asignatura</span><span class="ot"> codigo=</span><span class="st">&quot;a01&quot;</span> /&gt;</span>
+<span id="cb71-187"><a href="#cb71-187" aria-hidden="true" tabindex="-1"></a>                    &lt;<span class="kw">asignatura</span><span class="ot"> codigo=</span><span class="st">&quot;a07&quot;</span> /&gt;</span>
+<span id="cb71-188"><a href="#cb71-188" aria-hidden="true" tabindex="-1"></a>                &lt;/<span class="kw">asignaturas</span>&gt;</span>
+<span id="cb71-189"><a href="#cb71-189" aria-hidden="true" tabindex="-1"></a>                &lt;<span class="kw">proyecto</span>&gt;Estudio de Salinidad del Pantano Iris&lt;/<span class="kw">proyecto</span>&gt;</span>
+<span id="cb71-190"><a href="#cb71-190" aria-hidden="true" tabindex="-1"></a>            &lt;/<span class="kw">estudios</span>&gt;</span>
+<span id="cb71-191"><a href="#cb71-191" aria-hidden="true" tabindex="-1"></a>        &lt;/<span class="kw">alumno</span>&gt;</span>
+<span id="cb71-192"><a href="#cb71-192" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-193"><a href="#cb71-193" aria-hidden="true" tabindex="-1"></a>    &lt;/<span class="kw">alumnos</span>&gt;</span>
+<span id="cb71-194"><a href="#cb71-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb71-195"><a href="#cb71-195" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">universidad</span>&gt;</span></code></pre>
+</div>
+<p>Obtén la siguiente información.</p>
+<h3 id="actividad-4.01">Actividad 4.01</h3>
+<p>Nombre de la Universidad.</p>
+<p>Consulta XPath:</p>
+<pre class="xpath"><code>/universidad/nombre/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>Universidad de Zaragoza</code></pre>
+<h3 id="actividad-4.02">Actividad 4.02</h3>
+<p>País de la Universidad.</p>
+<p>Consulta XPath:</p>
+<pre class="xpath"><code>/universidad/pais/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>España</code></pre>
+<h3 id="actividad-4.03">Actividad 4.03</h3>
+<p>Nombres de las grados.</p>
+<p>Consulta XPath:</p>
+<pre class="xpath"><code>/universidad/grados/grado/nombre/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>Grado en Ingeniería Informática
+Grado en Administración y Dirección de Empresas
+Grado en Relaciones Laborales
+Grado en Quimica
+Grado en Biotecnología
+Grado en Humanidades</code></pre>
+<h3 id="actividad-4.04">Actividad 4.04</h3>
+<p>Años de plan de estudio de las grados.</p>
+<p>Consulta XPath:</p>
+<pre class="xpath"><code>/universidad/grados/grado/plan/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>2003
+2000
+2000
+2003
+2000
+1980</code></pre>
+<h3 id="actividad-4.05">Actividad 4.05</h3>
+<p>Nombres de todos los alumnos.</p>
+<p>Consulta XPath:</p>
+<pre class="xpath"><code>/universidad/alumnos/alumno/nombre/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>Víctor Manuel
+Luisa
+Fernando
+María</code></pre>
+<h3 id="actividad-4.06">Actividad 4.06</h3>
+<p>Identificadores de todas las grados.</p>
+<p>Consulta XPath:</p>
+<pre class="xpath"><code>/universidad/grados/grado/@id</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>id=g01
+id=g02
+id=g03
+id=g04
+id=g05
+id=g06</code></pre>
+<h3 id="actividad-4.07">Actividad 4.07</h3>
+<p>Datos de la grado cuyo id es g01.</p>
+<p>Consulta XPath:</p>
+<pre class="xpath"><code>/universidad/grados/grado[@id=&#39;g01&#39;]
+</code></pre>
+<p>Salida real:</p>
+<div class="sourceCode" id="cb85">
+  <pre
+    class="sourceCode xml"
+  ><code class="sourceCode xml"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>&lt;<span class="kw">grado</span><span class="ot"> id=</span><span class="st">&quot;g01&quot;</span>&gt;</span>
+<span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">nombre</span>&gt;Grado en Ingeniería Informática&lt;/<span class="kw">nombre</span>&gt;</span>
+<span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">plan</span>&gt;2003&lt;/<span class="kw">plan</span>&gt;</span>
+<span id="cb85-4"><a href="#cb85-4" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">creditos</span>&gt;250&lt;/<span class="kw">creditos</span>&gt;</span>
+<span id="cb85-5"><a href="#cb85-5" aria-hidden="true" tabindex="-1"></a>    &lt;<span class="kw">centro</span>&gt;Escuela de Informática&lt;/<span class="kw">centro</span>&gt;</span>
+<span id="cb85-6"><a href="#cb85-6" aria-hidden="true" tabindex="-1"></a>&lt;/<span class="kw">grado</span>&gt;</span></code></pre>
+</div>
+<h3 id="actividad-4.08">Actividad 4.08</h3>
+<p>Centro en que se estudia de la grado cuyo id es g02.</p>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>/universidad/grados/grado[@id=&#39;g02&#39;]/centro/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>Facultad de Ciencias Sociales</code></pre>
+<h3 id="actividad-4.09">Actividad 4.09</h3>
+<p>Nombre de las grados que tengan subdirector.</p>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>/universidad/grados/grado[subdirector]/nombre/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>Grado en Relaciones Laborales</code></pre>
+<h3 id="actividad-4.10">Actividad 4.10</h3>
+<p>Nombre de los alumnos que estén haciendo proyecto.</p>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>/universidad/alumnos/alumno/estudios/proyecto/../../nombre/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>Luisa
+María</code></pre>
+<h3 id="actividad-4.11">Actividad 4.11</h3>
+<p>Códigos de las grados en las que hay algún alumno matriculado.</p>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>/universidad/alumnos/alumno/estudios/grado/@codigo</code></pre>
+<p>Salida real:</p>
+<div class="sourceCode" id="cb93">
+  <pre
+    class="sourceCode xml"
+  ><code class="sourceCode xml"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a>codigo=g01</span>
+<span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a>codigo=g02</span>
+<span id="cb93-3"><a href="#cb93-3" aria-hidden="true" tabindex="-1"></a>codigo=g02</span>
+<span id="cb93-4"><a href="#cb93-4" aria-hidden="true" tabindex="-1"></a>codigo=g01</span></code></pre>
+</div>
+<h3 id="actividad-4.12">Actividad 4.12</h3>
+<p>Apellidos y Nombre de los alumnos con beca.</p>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>/universidad/alumnos/alumno[@beca=&#39;si&#39;]/nombre/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>Fernando</code></pre>
+<h3 id="actividad-4.13">Actividad 4.13</h3>
+<p>Nombre de las asignaturas del grado g04.</p>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>/universidad/asignaturas/asignatura[@titulacion=&#39;g04&#39;]/nombre/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>Pedagogía
+Tecnología de los Alimentos</code></pre>
+<h3 id="actividad-4.14">Actividad 4.14</h3>
+<p>Nombre de las asignaturas de segundo trimestre.</p>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>/universidad/asignaturas/asignatura[trimestre=&#39;2&#39;]/nombre/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>Ingeniería del Software
+Pedagogía
+Didáctica
+Tecnología de los Alimentos
+Historia del Pensamiento</code></pre>
+<h3 id="actividad-4.15">Actividad 4.15</h3>
+<p>Nombre de las asignaturas que no tienen 4 créditos teóricos.</p>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>/universidad/asignaturas/asignatura[creditosTeoricos!=&#39;4&#39;]/nombre/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>Ofimática
+Ingeniería del Software
+Tecnología de los Alimentos
+Bases de Datos
+Historia del Pensamiento</code></pre>
+<h3 id="actividad-4.16">Actividad 4.16</h3>
+<p>Código de la grado que estudia el último alumno.</p>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>/universidad/alumnos/alumno[last()]/estudios/grado/@codigo</code></pre>
+<p>Salida real:</p>
+<div class="sourceCode" id="cb103">
+  <pre
+    class="sourceCode xml"
+  ><code class="sourceCode xml"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a>codigo=g01</span></code></pre>
+</div>
+<h3 id="actividad-4.17">Actividad 4.17</h3>
+<p>Código de las asignaturas que estudian mujeres.</p>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>/universidad/alumnos/alumno[sexo=&#39;Mujer&#39;]/estudios/asignaturas/asignatura/@codigo</code></pre>
+<p>Salida real:</p>
+<div class="sourceCode" id="cb105">
+  <pre
+    class="sourceCode xml"
+  ><code class="sourceCode xml"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a>codigo=a02</span>
+<span id="cb105-2"><a href="#cb105-2" aria-hidden="true" tabindex="-1"></a>codigo=a01</span>
+<span id="cb105-3"><a href="#cb105-3" aria-hidden="true" tabindex="-1"></a>codigo=a02</span>
+<span id="cb105-4"><a href="#cb105-4" aria-hidden="true" tabindex="-1"></a>codigo=a01</span>
+<span id="cb105-5"><a href="#cb105-5" aria-hidden="true" tabindex="-1"></a>codigo=a07</span></code></pre>
+</div>
+<h3 id="actividad-4.18">Actividad 4.18</h3>
+<p>Nombre de los alumnos que matriculados en la asignatura a02.</p>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>/universidad/alumnos/alumno[estudios/asignaturas/asignatura[@codigo=&#39;a02&#39;]]/nombre/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>Luisa
+Fernando
+María</code></pre>
+<h3 id="actividad-4.19">Actividad 4.19</h3>
+<p>
+  Códigos de las grados que estudian los alumnos matriculados en alguna
+  asignatura.
+</p>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>/universidad/alumnos/alumno/estudios/grado/@codigo</code></pre>
+<p>Salida real:</p>
+<div class="sourceCode" id="cb109">
+  <pre
+    class="sourceCode xml"
+  ><code class="sourceCode xml"><span id="cb109-1"><a href="#cb109-1" aria-hidden="true" tabindex="-1"></a>codigo=g01</span>
+<span id="cb109-2"><a href="#cb109-2" aria-hidden="true" tabindex="-1"></a>codigo=g02</span>
+<span id="cb109-3"><a href="#cb109-3" aria-hidden="true" tabindex="-1"></a>codigo=g02</span>
+<span id="cb109-4"><a href="#cb109-4" aria-hidden="true" tabindex="-1"></a>codigo=g01</span></code></pre>
+</div>
+<h3 id="actividad-4.20">Actividad 4.20</h3>
+<p>Apellidos de todos los hombres.</p>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>/universidad/alumnos/alumno[sexo=&#39;Hombre&#39;]/*[self::apellido1 or self::apellido2]/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>Rivas
+Santos
+Pérez
+Romero</code></pre>
+<h3 id="actividad-4.21">Actividad 4.21</h3>
+<p>Nombre de la grado que estudia Víctor Manuel.</p>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>/universidad/grados/grado[@id=/universidad/alumnos/alumno[nombre=&#39;Víctor Manuel&#39;]/estudios/grado/@codigo]/nombre/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>Grado en Ingeniería Informática</code></pre>
+<h3 id="actividad-4.22">Actividad 4.22</h3>
+<p>Nombre de las asignaturas que estudia Luisa.</p>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>/universidad/asignaturas/asignatura[@id=/universidad/alumnos/alumno[nombre=&#39;Luisa&#39;]/estudios/asignaturas/asignatura/@codigo]/nombre/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>Ofimática
+Ingeniería del Software</code></pre>
+<h3 id="actividad-4.23">Actividad 4.23</h3>
+<p>Primer apellido de los alumnos matriculados en Ingeniería del Software.</p>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>/universidad/alumnos/alumno[estudios/asignaturas/asignatura[@codigo=/universidad/asignaturas/asignatura[nombre=&#39;Ingeniería del Software&#39;]/@id]]/apellido1/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>Pérez
+Pérez
+Avalón</code></pre>
+<h3 id="actividad-4.24">Actividad 4.24</h3>
+<p>
+  Nombre de las grados que estudian los alumnos matriculados en la asignatura
+  Tecnología de los Alimentos.
+</p>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>/universidad/grados/grado[@id = /universidad/alumnos/alumno/estudios/asignaturas/asignatura[@codigo = &#39;a07&#39;]/../../grado/@codigo]/nombre/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>Grado en Ingeniería Informática</code></pre>
+<h3 id="actividad-4.25">Actividad 4.25</h3>
+<p>Nombre de los alumnos matriculados en grados que no tienen subdirector.</p>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>/universidad/alumnos/alumno[estudios/grado/@codigo = /universidad/grados/grado[not(subdirector)]/@id]/nombre/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>Víctor Manuel
+Luisa
+Fernando
+María</code></pre>
+<h3 id="actividad-4.26">Actividad 4.26</h3>
+<p>
+  Nombre de las alumnos matriculados en asignaturas con 0 créditos prácticos y
+  que estudien la grado de I.T. Informática . Consulta XPath:
+</p>
+<pre
+  class="xpath"
+><code>/universidad/alumnos/alumno[estudios/asignaturas/asignatura/@codigo = /universidad/asignaturas/asignatura[creditosPracticos=&#39;0&#39;]/@id and estudios/grado/@codigo = //grado[nombre=&quot;Grado en Ingeniería Informática&quot;]/@id]/nombre/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>Víctor Manuel</code></pre>
+<h3 id="actividad-4.27">Actividad 4.27</h3>
+<p>
+  Nombre de los alumnos que estudian grados cuyos planes son anteriores a 2002.
+  Consulta XPath:
+</p>
+<pre
+  class="xpath"
+><code>/universidad/alumnos/alumno[estudios/grado/@codigo = /universidad/grados/grado[plan &lt; &#39;2002&#39;]/@id]/nombre/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>Luisa
+Fernando</code></pre>
+<h3 id="actividad-4.28">Actividad 4.28</h3>
+<p>Invéntate tu propia consulta.</p>
+<p>Nombre de las asignaturas que tienen más créditos prácticos que teóricos.</p>
+<p>Consulta XPath:</p>
+<pre
+  class="xpath"
+><code>/universidad/asignaturas/asignatura[number(creditosPracticos) &gt; number(creditosTeoricos)]/nombre/text()</code></pre>
+<p>Salida real:</p>
+<pre class="plaintext"><code>Derecho Internacional
+Tecnología de los Alimentos
+Bases de Datos</code></pre>
+
+</body>
+</html>
+
